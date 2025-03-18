@@ -285,6 +285,7 @@ mark{
     justify-content: center;
     align-items: center;
     font-size: 1em;
+    position: fixed;
 }
 
 @media screen and (max-width: 890px) {
