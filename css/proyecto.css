@@ -275,3 +275,20 @@ mark{
     grid-template-columns: repeat(2, 1fr);
     align-self: center;
 }
+.medio{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: var();
+    color: var(--backgroundColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+
+@media screen and (width<890px) {
+    .medio{
+        display: block;
+    }
+}

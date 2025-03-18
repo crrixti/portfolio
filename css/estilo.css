@@ -340,3 +340,13 @@ h4{
         opacity: 1;
     }
 }
+
+.medio{
+    display: none;
+}
+
+@media screen and (width<890px) {
+    .medio{
+        display: block;
+    }
+}
