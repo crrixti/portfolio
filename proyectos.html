@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CristinaGarcia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Press+Start+2P&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
+        <div>
+            <a href="proyectos.html"><h6>Proyectos</h6></a>
+            <!--<a href="about.html"><h6>Sobre mí</h6></a>-->
+        </div>
+        <a href="contacto.html"><button>Contacta</button></a>
+    </header>
+
+    <section style="position: absolute; top: 15vh;">
+            <div id="proy" class="contenedor">
+                <h4>[000] Portfolio</h4>
+                <div class="interactivo">
+                    <p style="font-size: 0.6em; width: 100%;">Click en todos los botones blancos</p>
+                    <p class="especial">La web que está viendo ha sido &nbsp;<button class="Buno">diseñada</button><button class="Bdos plegado">con código</button><span class="Btres plegado"> &nbsp; manualmente &nbsp;</span><span class="Bcuatro plegado">100% </span><button class="Bcinco">sin conservantes</button> <span class="Bseis plegado">&nbsp; ni &nbsp;</span><button class="Bocho plegado">colorantes.</button><span class="Bsiete plegado"> &nbsp; Tampoco se ha usado ningún constructor visual ni plantilla, sólo <span style="color: red; text-decoration: underline;">creatividad.</span></span></p>
+                </div>
+                <div class="etiquetas">
+                    <p>HTML5</p>
+                    <p>CSS3</p>
+                    <p>JavaScript</p>
+                    <p>Front-End Dev</p>
+                </div>
+                <p class="anyo">2025</p>
+            </div>
+            <a href="JC.html">
+                <div class="contenedor JC">
+                    <h4>[001] JC Showcase</h4>
+                    <div class="etiquetas">
+                        <p>Figma</p>
+                        <p>Wireframing</p>
+                        <p>Prototipo High-Fidelity</p>
+                        <p>Dirección Creativa</p>
+                    </div>
+                    <p class="anyo">2024</p>
+                </div>
+            </a>
+            <a href="BBDD.html">
+                <div class="contenedor BBDD">
+                    <h4>[002] BBDD en cooperación con la ONU</h4>
+                    <div class="etiquetas">
+                        <p>Front-End</p>
+                        <p>Back-End</p>
+                        <p>UX Research</p>
+                        <p>UX/UI Design</p>
+                        <p>BBDD</p>
+                    </div>
+                    <p class="anyo">2022</p>
+                </div>
+            </a>
+            <a href="art.html" id="proy">
+                <div class="contenedor art">
+                    <h4>[003] Art&Connect.app</h4>
+                    <div class="etiquetas">
+                        <p>UX Research</p>
+                        <p>Metodologías AGILES</p>
+                        <p>Propuesta de Valor</p>
+                    </div>
+                    <p class="anyo">2024</p>
+                </div>
+            </a>
+            
+            <a href="BurstProject.html">
+                <div class="contenedor BP">
+                    <h4>[004] Burst Project</h4>
+                    <div class="etiquetas">
+                        <p>Wordpress</p>
+                        <p>CMS</p>
+                        <p>Prototipo Low-fidelity</p>
+                        <p>SEO</p>
+                    </div>
+                    <p class="anyo">2024</p>
+                </div>
+            </a>
+    </section>
+
+    <script>
+        const header = document.querySelector("header");
+
+        const disenyada = document.querySelector(".Buno");
+        const codigo = document.querySelector(".Bdos");
+        const manualmente = document.querySelector(".Btres");
+        const cien = document.querySelector(".Bcuatro");
+        const conservantes = document.querySelector(".Bcinco");
+        const ni = document.querySelector(".Bseis");
+        const ultima = document.querySelector(".Bsiete");
+        const colorantes = document.querySelector(".Bocho");
+
+        setTimeout(() => {
+            header.classList.add("down");
+        }, 50);
+
+        disenyada.addEventListener("click", () => {
+            codigo.classList.remove("plegado");
+            manualmente.classList.remove("plegado");
+        });
+
+        codigo.addEventListener("click", () => {
+            cien.classList.remove("plegado");
+            manualmente.classList.remove("plegado");
+            conservantes.classList.remove("plegado");
+        });
+
+        conservantes.addEventListener("click", () => {
+            ni.classList.remove("plegado");
+            colorantes.classList.remove("plegado");
+        });
+
+        colorantes.addEventListener("click", () => {
+            ultima.classList.remove("plegado");
+        });
+        
+    </script>
+</body>
+</html>
+    

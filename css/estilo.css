@@ -1,0 +1,342 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --textColor: #484848;
+    --backgroundColor: #f9f9f9;
+    --detailsColor: #9f9f9f;
+}
+html{
+    cursor: url(../img/cursor-normal.png), auto;
+} 
+body{
+    font-family: "Manrope", sans-serif;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Portada */
+header{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    opacity: 0;
+    background-color: var(--backgroundColor);
+    position: fixed;
+    top:0;
+    z-index: 5;
+}
+header h2{
+    font-size: 1em;
+    color: var(--textColor);
+}
+header div{
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    border-radius: 20px;
+    gap: 10px;
+}
+header div a{
+    color: var(--backgroundColor);
+    font-weight: 400;
+}
+header div h6:hover{
+    color: var(--detailsColor);
+    text-decoration: underline;
+}
+header button{
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+    border-radius:50px;
+    font-family: "Manrope", sans-serif;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.7em;
+}
+header button:hover{
+    transform: scale(1.2);
+    background-color: var(--detailsColor);
+    color: var(--backgroundColor);
+    box-shadow: 2px 5px 10px var(--detailsColor);
+    border: none;
+    text-decoration: underline;
+}
+a{
+    text-decoration: none;
+}
+.down{
+    animation: down 2s;
+    animation-fill-mode: forwards;
+}
+h1{
+    font-size: 6em;
+    margin-top: 35vh;
+    position: relative;
+}
+h1 span{
+    opacity: 0;
+}
+h1 .visible{
+    animation: fade 1s;
+    animation-fill-mode: forwards;
+}
+.invisible{
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    width: 100%;
+    height: 85vh;
+}
+.invisible img{
+    opacity: 0;
+    position: absolute;
+    width: 150px;
+}
+.invisible img:nth-child(1){
+    top: 25%;
+    left: 30%;
+}
+.invisible img:nth-child(2){
+    top: 50%;
+    left: 40%;
+}
+.invisible img:nth-child(3){
+    top: 45%;
+    left: 65%;
+}
+.invisible img:nth-child(4){
+    top: 10%;
+    left: 5%;
+}
+.invisible img:nth-child(5){
+    top: 25%;
+    left: 50%;
+}
+.invisible img:nth-child(6){
+    top: 35%;
+    left: 6%;
+}
+.invisible img:nth-child(7){
+    top: 50%;
+    left: 80%;
+}
+.invisible img:nth-child(8){
+    top: 15%;
+    left: 25%;
+}
+.invisible img:nth-child(9){
+    top: 35%;
+    left: 50%;
+}
+.invisible img:nth-child(10){
+    top: 40%;
+    left: 80%;
+}
+.invisible img:nth-child(11){
+    top: 50%;
+    left: 60%;
+}
+.invisible img:nth-child(12){
+    top: 5%;
+    left: 70%;
+}
+.invisible img:nth-child(13){
+    top: 10%;
+    left: 50%;
+}
+.invisible img:nth-child(14){
+    top: 20%;
+    left: 80%;
+}
+.invisible img:hover{
+    animation: fade 1s;
+    animation-fill-mode: backwards;
+}
+h3{
+    margin:30vh 0 5vh;
+    opacity: 0;
+}
+.up{
+    animation: up 3s;
+    animation-fill-mode: forwards;
+}
+
+/* Sección de proyectos sin hover */
+section{
+    width: 100%;
+}
+section a{
+    color: var(--textColor);
+}
+.contenedor{
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    position: relative;
+}
+h4{
+    font-size:1.2em;
+    position: sticky;
+    top: 46vh;
+    margin-left: 2%;
+}
+.etiquetas{
+    position: sticky;
+    top: 46vh;
+    display: inline-flex;
+}
+.etiquetas p{
+    position: sticky;
+    top: 46vh;
+    display: inline;
+    background-color: var(--detailsColor);
+    color: var(--backgroundColor);
+    font-size: 12px;
+    border-radius: 15px;
+    padding: 3px 10px;
+}
+.anyo{
+    position: sticky;
+    top: 46vh;
+    background-color: none;
+    border: none;
+    margin-right: 2%;
+}
+.escondido-no-hov{
+    display: none;
+}
+
+/*Sección de proyectos en hover */
+.contenedor:hover{
+    background-color: var(--textColor);
+    border: none;
+    color: var(--backgroundColor);
+    cursor: url("../img/cursor-normal-gris.png"), auto;
+}
+.contenedor:first-child:hover{
+    cursor: pointer;
+}
+.JC:hover{
+    background: url("../img/JC-background.png") no-repeat center /cover;
+}
+.BBDD:hover{
+    background: url("../img/BBDD-background.png") no-repeat center /cover;
+}
+.art:hover{
+    background: url("../img/UXR-background.png") no-repeat left /cover;
+}
+.BP:hover{
+    background: url("../img/USR-background.png") no-repeat left /cover;
+}
+.escondido-hov{
+    display: none;
+}
+
+/* Proyecto [000] */
+.interactivo{
+    position: absolute;
+    top: 17vh;
+    left: 30%;
+    color: var(--backgroundColor);
+    border: none;
+}
+.especial{
+    font-size: 1em;
+    width: 650px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+}
+.especial button{
+    color: var(--textColor);
+    font-size:1em;
+    border-radius: 20px;
+    background-color: var(--backgroundColor);
+    font-family: monospace;
+    padding: 3px 10px;
+}
+.plegado{
+    display: none;
+}
+.Bdos,
+.Bocho{
+    border: 2px dotted;
+    background-color: var(--detailsColor);
+    color: var(--textColor);
+}
+.especial button .rojo{
+    background-color: crimson;
+}
+
+/*Página de Contacto */
+.contacto{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15vh;
+}
+.contacto a{
+    width: 100%;
+    text-decoration: none;
+    color: var(--textColor);
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+
+}
+.contacto a:hover{
+    text-decoration: underline;
+    color: var(--detailsColor);
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes down {
+    from{
+        translate: 0 -1000px;
+        opacity: 0;
+    }
+    to{
+        translate: 0 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes up {
+    from{
+        translate: 0 1000px;
+        opacity: 0;
+    }
+    to{
+        translate: 0 0px;
+        opacity: 1;
+    }
+}

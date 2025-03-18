@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --textColor: #484848;
+    --backgroundColor: #f9f9f9;
+    --detailsColor: #9f9f9f;
+}
+html{
+    cursor: url(../img/cursor-normal.png), auto;
+} 
+body{
+    font-family: "Manrope", sans-serif;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* Esconder la barra de scroll */
+}
+header{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    background-color: var(--backgroundColor);
+}
+header h2{
+    font-size: 1em;
+    color: var(--textColor);
+}
+header div{
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    border-radius: 20px;
+    gap: 20px;
+}
+header div a{
+    color: var(--backgroundColor);
+}
+header div h6:hover{
+    color: var(--detailsColor);
+    text-decoration: underline;
+}
+header button{
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+    border-radius:50px;
+    font-family: "Manrope", sans-serif;
+    padding: 10px 20px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+header button:hover{ 
+    transform: scale(1.2);
+    background-color: var(--detailsColor);
+    color: var(--backgroundColor);
+    box-shadow: 2px 5px 10px var(--detailsColor);
+    border: none;
+    text-decoration: underline;
+}
+a{
+    text-decoration: none;
+}
+
+/* Contenido de las páginas de Proyectos */
+.contenido{
+    width: 100%;
+    height: 82vh; /*eliminar el scroll vertical */ 
+    display: flex;
+    align-items: center;
+}
+.izquierda{
+    width: 180px;
+    height: 80vh;
+    box-sizing: border-box;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--textColor);
+    position: fixed;
+    top:15vh;
+    background-color: var(--backgroundColor);
+    z-index: 4;
+} 
+.etiquetas p{
+    display: inline-block;
+    background-color: var(--textColor);
+    color: var(--detailsColor);
+    font-size: 0.7em;
+    border-radius: 15px;
+    padding: 3px 10px;
+    margin: 2px 1px 0;
+}
+.canvas{
+    width: 300%;
+    margin: 20vh 25vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+}
+.next{
+    width: 150px;
+    height: 150px;
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+    border-radius: 50%;
+    font-size: 1em;
+    font-family: "Manrope", sans-serif;
+    margin-right: 10vw;
+}
+.next:hover{
+    background-color: var(--backgroundColor);
+    border: 3px solid var(--textColor);
+    color: var(--textColor);
+    box-shadow: 2px 2px 5px var(--textColor);
+}
+.ventana p{
+    font-weight: 600;
+}
+
+/* PROYECTO: ArtApp.com */
+.brief{
+    width: 400px;
+    font-family: monospace;
+}
+mark{
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+}
+.primero{
+    font-size: 1.5em;
+    width: 400px;
+}
+.painpoints{
+    display: grid;
+    grid-template-columns: 30px 350px;
+    grid-template-rows: repeat(4, 60px);
+    row-gap: 2px;
+    column-gap: 20px;
+    padding: 0;
+    margin-top: 30px;
+    justify-items: end;
+}
+.painpoints p{
+    font-family: "Manrope", sans-serif;
+    font-size: 0.8em;
+    align-self: center;
+    padding: 5px 10px;
+}
+.painpoints p:nth-child(2),
+.painpoints p:nth-child(3),
+.painpoints p:nth-child(6),
+.painpoints p:nth-child(7){
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+    border-radius: 20px;
+}
+.user-persona-story{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.user-persona-story img{
+    width: 497px;
+}
+
+
+/* http://bennet.clapat.com/?ref=designerdailyreport.com*/
+/*PROYECTO: JC Portfolio */
+.indiceJC{
+    display: grid;
+    grid-template-rows: 5vh, repeat(3, 1fr);
+    justify-items: center;
+    align-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    gap: 10px;
+}
+.indiceJC img{
+    height: 100px;
+}
+.indiceJC img:hover{
+    border: 2px solid var(--textColor);
+    box-shadow: 2px 2px 5px var(--textColor);
+}
+.ventana{
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+.ventana p{
+    display: inline;
+}
+.ventana video{
+    display: block;
+}
+
+/* PROYECTO: Burst Project */
+.indiceModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.modal{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    cursor: pointer; /* añadir lo de la galería modal aqui*/
+}
+.modal img:hover{
+    border: 2px solid var(--textColor);
+    box-shadow: 2px 2px 5px var(--textColor);
+}
+
+/*PROYECTO: portfolio */
+.especial{
+    color: var(--textColor);
+    font-size: 1.2em;
+    width: 400px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+}
+.especial button{
+    color: var(--backgroundColor);
+    font-size: 1em;
+    border-radius: 20px;
+    background-color: var(--textColor);
+    font-family: monospace;
+    padding: 3px 10px;
+}
+.Bdos,
+.Bocho{
+    border: 2px dotted;
+    background-color: var(--detailsColor);
+    color: var(--textColor);
+}
+.invisible{
+    display: none;
+}
+
+/*PROYECTO: BBDD*/
+.research{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.8em;
+    gap: 2px;
+}
+.access{
+    width: 500px;
+    height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+}
