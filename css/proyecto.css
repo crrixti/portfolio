@@ -287,7 +287,7 @@ mark{
     font-size: 1em;
 }
 
-@media screen and (width<890px) {
+@media screen and (max-width: 890px) {
     .medio{
         display: block;
     }

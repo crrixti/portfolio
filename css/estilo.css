@@ -345,7 +345,7 @@ h4{
     display: none;
 }
 
-@media screen and (width<890px) {
+@media screen and (max-width: 890px) {
     .medio{
         display: block;
     }
