@@ -347,7 +347,6 @@ h4{
     height: 100vh;
     background-color: var(--textColor);
     color: var(--backgroundColor);
-    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1em;
