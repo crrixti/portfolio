@@ -1,15 +1,20 @@
+/*Normalization of margins and padding in all navigators*/
 *{
     margin: 0;
     padding: 0;
 }
+/*Definition of Custom Colour Palette*/
 :root{
     --textColor: #484848;
     --backgroundColor: #f9f9f9;
     --detailsColor: #9f9f9f;
 }
+ /*For this project we set a Custom Cursor */
 html{
     cursor: url(../img/cursor-normal.png), auto;
 } 
+
+/*Portada*/
 body{
     font-family: "Manrope", sans-serif;
     background-color: var(--backgroundColor);
@@ -20,8 +25,6 @@ body{
     align-items: center;
     flex-direction: column;
 }
-
-/* Portada */
 header{
     width: 100%;
     height: 15vh;
