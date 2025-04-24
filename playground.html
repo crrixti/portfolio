@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Press+Start+2P&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <!--Header of the site, it is the same for all pages-->
+    <header class="down">
+        <!--Link for going back to Home Page. Also we use tag it as h2 because it contains the portfolio's owner name and for SEO optimization-->
+        <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
+        <!--Navigation menu-->
+        <nav>
+            <ul>
+                <li><a href="proyectos.html"><h6>Projects</h6></a></li>
+                <li><a href="playground.html"><h6>Playground</h6></a></li>
+                <li><a href="resume.html"><h6>Resume</h6></a></li>
+            </ul>
+        </nav>
+        <!--Contact Button-->
+        <a href="contacto.html"><button>Contact</button></a>
+    </header>
+    
+    <section class="contenido">
+        <aside>
+            <p class="exp">Playground is a space for intentional exploration and playful experimentation. Each animation is a tiny study in movement and interaction. Through code, color, and a bit of chaos, Playground invites curiosity to take the lead and reminds that making is most alive when it's not afraid to play.</p>
+        </aside>
+
+        <div class="playground">
+            <div class=" desplazada">
+                <div class="ventana">
+                    <div class="ventana-top">
+                        <p>[001] sun rise/set/riset</p>
+                        <img src="img/diana.png" alt="Diana">
+                    </div>
+                    
+                    <div class="obra sun">
+                        <div class="imagen"></div>
+                        <div class="imagen"></div>
+                        <div class="imagen"></div>
+                    </div>
+                    <div class="ventana-bottom">
+                        <img src="img/diana.png" alt="Diana">
+                        <img src="img/codigo-de-barras.png" alt="Código de barras">
+                        <img src="img/diana.png" alt="Diana">
+                    </div>
+                </div>
+                <p class="exp">While the sun rises in one place, it sets in another — a visual echo of simultaneity.
+                    This piece invites the viewer to let go of self-centered narratives and recognize the shared rhythms of distant lives. Through subtle shifts in warm tones — between amber, ochre, and gold — it suggests a quiet call for empathy in a world increasingly defined by extreme polarization.</p>
+            </div>
+
+            <div class="desplazada">
+                <p class="exp">A subtle protest against the culture of the scroll. Just as the song <span style="font-style:italic;">Video Killed the Radio Star</span> proclaimed the death of one medium at the hands of another in the 80s, this piece reflects a new eclipse: social media has now killed the video, or in other words said, long-form formats, and with them, our collective capacity for sustained attention. <br> Evoking the classic DVD idle screen once familiar in living rooms everywhere. The motion, gentle and repetitive, is melancholic — a meditation on the simplicity we’ve lost and a call for patience, pause and depth.</p>
+                <div class="ventana">
+                    <div class="ventana-top">
+                        <p>[002] t1kTØk killed the TV star</p> 
+                        <img src="img/diana.png" alt="Diana">
+                    </div>
+                      
+                    <div class="obra tv">
+                        <div class="pelota"><p>tv</p></div>
+                    </div>  
+                    <div class="ventana-bottom">
+                        <img src="img/diana.png" alt="Diana">
+                        <img src="img/codigo-de-barras.png" alt="Código de barras">
+                        <img src="img/diana.png" alt="Diana">
+                    </div>
+                </div>     
+            </div>
+
+            <div class="desplazada">
+                <div class="ventana">
+                    <div class="ventana-top">
+                        <p>[003] impaKt</p>
+                        <img src="img/diana.png" alt="Diana">
+                    </div>
+                    
+                    <div class="obra impact">
+                        <div class="bicho"></div>
+                    </div>
+                    <p style="font-size: 0.6em;">Play with the mouse putting it in and out the ball.</p>
+                    <div class="ventana-bottom">
+                        <img src="img/diana.png" alt="Diana">
+                        <img src="img/codigo-de-barras.png" alt="Código de barras">
+                        <img src="img/diana.png" alt="Diana">
+                    </div>
+                </div>
+                <p class="exp">This piece is a playful yet poignant reminder: nothing remains the same once contact is made. With every interaction, the “bicho” — a restless, shifting form — responds. It darts to new coordinates, changes its shape, transforms its color, and what seems like chaos is, in fact, consequence. <br>Each movement echoes a fundamental truth: we leave traces. On others, on spaces, on moments. <br>The animation becomes a metaphor for the subtle, often invisible impact of presence, nothing — and no one — stays quite the same after being seen, felt, or acknowledged.</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+
+            const contenedor = document.querySelector('.obra.tv');
+            const pelota = document.querySelector('.pelota');
+
+            let posX = 0;
+            let posY = 0;
+            let velX = 2;
+            let velY = 2;
+
+            function getRandomColor() {
+                const letras = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letras[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            function moverPelota() {
+                const maxX = contenedor.clientWidth - pelota.clientWidth;
+                const maxY = contenedor.clientHeight - pelota.clientHeight;
+
+                posX += velX;
+                posY += velY;
+
+                let rebotó = false;
+
+                if (posX <= 0 || posX >= maxX) {
+                    velX *= -1;
+                    rebotó = true;
+                }
+                if (posY <= 0 || posY >= maxY) {
+                    velY *= -1;
+                    rebotó = true;
+                }
+
+                if (rebotó) {
+                    pelota.style.backgroundColor = getRandomColor();
+                }
+
+                pelota.style.left = posX + 'px';
+                pelota.style.top = posY + 'px';
+
+                requestAnimationFrame(moverPelota);
+            }
+
+            moverPelota();
+
+           
+            const zona = document.querySelector('.obra.impact');
+            const bicho = document.querySelector('.bicho');
+
+            function getRandom(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function moverBicho() {
+                const maxX = zona.clientWidth - bicho.clientWidth;
+                const maxY = zona.clientHeight - bicho.clientHeight;
+
+                const newX = getRandom(0, maxX);
+                const newY = getRandom(0, maxY);
+                const newScale = getRandom(0.5, 1.5);
+                const newColor = getRandomColor();
+
+                bicho.style.left = `${newX}px`;
+                bicho.style.top = `${newY}px`;
+                bicho.style.transform = `scale(${newScale})`;
+                bicho.style.backgroundColor = newColor;
+            }
+
+            bicho.addEventListener('mouseenter', moverBicho);
+
+
+    </script>
+</body>
+</html>

@@ -1,3 +1,11 @@
+<!-- 
+ DESCRIPTION: This HTML document contains the homepage of the portfolio site.
+ GENERAL STRUCTURE:
+    - Header: Home button, Navigation menu, and Contact button
+    - Principal HTML headings (h1, h2, h3), such us
+    - Gallery of portfolio projects
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,38 +21,49 @@
     <div class="medio">
         <p>Please switch to a screen<br>wider than 900px, in order to <br>enjoy a top-notch experience while <br>browsing this site ;) </p>
     </div>
+    <!--Header of the site, it is the same for all pages-->
     <header>
+        <!--Link for going back to Home Page. Also we use tag it as h2 because it contains the portfolio's owner name and for SEO optimization-->
         <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
-        <div>
-            <a href="#proy"><h6>Projects</h6></a>
-            
-            <!--<a href="about.html"><h6>Sobre mí</h6></a>-->
-        </div>
+        <!--Navigation menu-->
+        <nav>
+            <ul>
+                <li><a href="#proy"><h6>Projects</h6></a></li>
+                <li><a href="playground.html"><h6>Playground</h6></a></li>
+                <li><a href="resume.html"><h6>Resume</h6></a></li>
+            </ul>
+        </nav>
+        <!--Contact Button-->
         <a href="contacto.html"><button>Contact</button></a>
     </header>
 
-    <h1>Cristina García</h1>
-    <div class="invisible"> 
-        <img src="img/invisible/Captura de pantalla 2025-03-15 120304.png" alt="">
-        <img src="img/invisible/Captura de pantalla 2025-03-15 120349.png" alt="">
-        <img src="img/invisible/JC-entero.png" alt="">
-        <img src="img/invisible/JC-prototipo-landing - copia.png" alt="">
-        <img src="img/invisible/JC-prototipo-portfolio.png" alt="">
-        <img src="img/invisible/pain-points.png" alt="">
-        <img src="img/invisible/screencapture-proyecto-burstproject-proyecto-agencia-yeka-2025-03-14-12_32_40.png" alt="">
-        <img src="img/invisible/Captura de pantalla 2025-03-15 120304.png" alt="">
-        <img src="img/invisible/Captura de pantalla 2025-03-15 120349.png" alt="">
-        <img src="img/invisible/JC-entero.png" alt="">
-        <img src="img/invisible/JC-prototipo-landing - copia.png" alt="">
-        <img src="img/invisible/JC-prototipo-portfolio.png" alt="">
-        <img src="img/invisible/pain-points.png" alt="">
-        <img src="img/invisible/screencapture-proyecto-burstproject-proyecto-agencia-yeka-2025-03-14-12_32_40.png" alt="">
-    </div>
+    <!--This section woks as a "front page", this is where the user will get its first impression from. That is the reason why here are included the principal HTML headings-->
+    <section class="headings">
+        <!--Most important Heading for SEO is the name of the portfolio's owner again-->
+        <h1>Cristina García</h1>
+        <div class="invisible"> 
+            <img src="img/invisible/Captura de pantalla 2025-03-15 120304.png" alt="">
+            <img src="img/invisible/Captura de pantalla 2025-03-15 120349.png" alt="">
+            <img src="img/invisible/JC-entero.png" alt="">
+            <img src="img/invisible/JC-prototipo-landing - copia.png" alt="">
+            <img src="img/invisible/JC-prototipo-portfolio.png" alt="">
+            <img src="img/invisible/pain-points.png" alt="">
+            <img src="img/invisible/screencapture-proyecto-burstproject-proyecto-agencia-yeka-2025-03-14-12_32_40.png" alt="">
+            <img src="img/invisible/Captura de pantalla 2025-03-15 120304.png" alt="">
+            <img src="img/invisible/Captura de pantalla 2025-03-15 120349.png" alt="">
+            <img src="img/invisible/JC-entero.png" alt="">
+            <img src="img/invisible/JC-prototipo-landing - copia.png" alt="">
+            <img src="img/invisible/JC-prototipo-portfolio.png" alt="">
+            <img src="img/invisible/pain-points.png" alt="">
+            <img src="img/invisible/screencapture-proyecto-burstproject-proyecto-agencia-yeka-2025-03-14-12_32_40.png" alt="">
+        </div>
 
-    <h3>UX/UI Design, Front-End Dev, Product Design</h3>
+        <!--What the portfolio consist on and services offered-->
+        <h3>UX/UI Design, Front-End Dev, Product Design</h3>
+    </section>
 
+    <!--This Gallery of portfolio projects gives to the user a quick view into the details of each project-->
    <section>
-    
         <div id="proy" class="contenedor">
             <h4>[000] Portfolio</h4>
             <div class="interactivo">
@@ -57,19 +76,19 @@
                 <p>JavaScript</p>
                 <p>Front-End Dev</p>
             </div>
-            <p class="anyo">2025</p>
+            <p>2025</p>
         </div>
         <a href="JC.html">
-                <div class="contenedor JC">
-                    <h4>[001] JC Showcase</h4>
-                    <div class="etiquetas">
-                        <p>Figma</p>
-                        <p>Wireframing</p>
-                        <p>High-Fidelity Prototype</p>
-                        <p>Creative Direction</p>
-                    </div>
-                    <p class="anyo">2024</p>
+            <div class="contenedor JC">
+                <h4>[001] JC Showcase</h4>
+                <div class="etiquetas">
+                    <p>Figma</p>
+                    <p>Wireframing</p>
+                    <p>High-Fidelity Prototype</p>
+                    <p>Creative Direction</p>
                 </div>
+                <p>2024</p>
+            </div>
         </a>
         <a href="BBDD.html">
             <div class="contenedor BBDD">
@@ -81,7 +100,7 @@
                     <p>UX/UI Design</p>
                     <p>Databases</p>
                 </div>
-                <p class="anyo">2022</p>
+                <p>2022</p>
             </div>
         </a>
         <a href="art.html">
@@ -92,10 +111,9 @@
                     <p>AGILE Methodology</p>
                     <p>Value Proposition</p>
                 </div>
-                <p class="anyo">2024</p>
+                <p>2024</p>
             </div>
         </a>
-    
         <a href="BurstProject.html">
             <div class="contenedor BP">
                 <h4>[004] Burst Project</h4>
@@ -105,7 +123,7 @@
                     <p>Low-fidelity Prototype</p>
                     <p>SEO</p>
                 </div>
-                <p class="anyo">2024</p>
+                <p>2024</p>
             </div>
         </a>
     </section>

@@ -1,0 +1,3 @@
+padding top & bottom 0.3em
+font-size texto normal clamp(0.7em, 0.5vw, 1em)
+img & videos 45/50vw
