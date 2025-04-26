@@ -43,6 +43,7 @@ header{
     background-color: var(--backgroundColor);
     position: fixed;
     top:0;
+    left:0;
     z-index: 2; 
     gap: 2vw;
 }
