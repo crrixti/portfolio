@@ -25,3 +25,24 @@ botones.forEach( boton => {
     });
 });
 
+/* horizontal */
+
+function checkOrientation() {
+    const message = document.getElementById('rotate-message');
+    
+    if (window.innerHeight > window.innerWidth) {
+      // Estamos en vertical
+      message.style.opacity = "1";
+    } else {
+      // Estamos en horizontal
+      message.style.opacity = "0";
+    }
+  }
+  
+  // Comprobar al cargar
+  window.addEventListener('load', checkOrientation);
+  
+  // Comprobar cuando gira
+  window.addEventListener('resize', checkOrientation);
+  window.addEventListener('orientationchange', checkOrientation);
+  
