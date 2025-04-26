@@ -16,17 +16,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Press+Start+2P&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
+    <script defer src="js/functions.js"></script>
 </head>
 <body>
-    <div class="medio">
-        <p>Please switch to a screen<br>wider than 900px, in order to <br>enjoy a top-notch experience while <br>browsing this site ;) </p>
-    </div>
     <!--Header of the site, it is the same for all pages-->
     <header>
         <!--Link for going back to Home Page. Also we use tag it as h2 because it contains the portfolio's owner name and for SEO optimization-->
         <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
         <!--Navigation menu-->
+        <!--<button class="menu-movil-abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button> -->
         <nav>
+            <!--<button class="menu-movil-cerrar">x</button> -->
             <ul>
                 <li><a href="#proy"><h6>Projects</h6></a></li>
                 <li><a href="playground.html"><h6>Playground</h6></a></li>
@@ -35,6 +39,7 @@
         </nav>
         <!--Contact Button-->
         <a href="contacto.html"><button>Contact</button></a>
+
     </header>
 
     <!--This section woks as a "front page", this is where the user will get its first impression from. That is the reason why here are included the principal HTML headings-->
@@ -76,7 +81,7 @@
                 <p>JavaScript</p>
                 <p>Front-End Dev</p>
             </div>
-            <p>2025</p>
+            <p class="anyo">2025</p>
         </div>
         <a href="JC.html">
             <div class="contenedor JC">
@@ -87,7 +92,7 @@
                     <p>High-Fidelity Prototype</p>
                     <p>Creative Direction</p>
                 </div>
-                <p>2024</p>
+                <p class="anyo">2024</p>
             </div>
         </a>
         <a href="BBDD.html">
@@ -100,18 +105,18 @@
                     <p>UX/UI Design</p>
                     <p>Databases</p>
                 </div>
-                <p>2022</p>
+                <p class="anyo">2022</p>
             </div>
         </a>
         <a href="art.html">
             <div class="contenedor art">
-                <h4>[003] Art&Connect.app</h4>
+                <h4>[003] Art & Connect.app</h4>
                 <div class="etiquetas">
                     <p>UX Research</p>
                     <p>AGILE Methodology</p>
                     <p>Value Proposition</p>
                 </div>
-                <p>2024</p>
+                <p class="anyo">2024</p>
             </div>
         </a>
         <a href="BurstProject.html">
@@ -123,7 +128,7 @@
                     <p>Low-fidelity Prototype</p>
                     <p>SEO</p>
                 </div>
-                <p>2024</p>
+                <p class="anyo">2024</p>
             </div>
         </a>
     </section>
@@ -182,6 +187,7 @@
         colorantes.addEventListener("click", () => {
             ultima.classList.remove("plegado");
         });
+
     </script>
 </body>
 </html>

@@ -14,4 +14,14 @@ for (let i = 0; i <letras.length; i++){
     }, 100 * i);
 }
 
+/* responsive */
+
+const men = document.querySelector("nav");
+const botones = document.querySelectorAll (".menu-movil-abrir, .menu-movil-cerrar");
+
+botones.forEach( boton => {
+    boton.addEventListener("click",() => {
+        men.classList.toggle(".desplegado");
+    });
+});
 

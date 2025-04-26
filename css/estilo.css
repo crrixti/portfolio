@@ -43,51 +43,60 @@ header{
     background-color: var(--backgroundColor);
     position: fixed;
     top:0;
-    z-index: 5; /* mirar luego este z-index y ponerlo quizá más bajo*/
+    z-index: 2; 
+    gap: 2vw;
 }
 h2{
     font-size: 1em;
     font-weight: 600;
     color: var(--textColor);
+    display: inline;
 }
 h2:hover{
     transition: rotar 0.4s ease;
-
 }
 nav ul{
     list-style:none;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
     background-color: var(--textColor);
-    padding: 10px 20px;
+    padding: clamp(5px, 1vw, 10px) clamp(7px, 1vh, 20px);
     border-radius: 20px;
-    gap: 2vw; /*Comprobar cómo queda esto en otras pantallas luego para ajustar medidas */
+    gap: 2vw; 
 }
 li a{
     color: var(--backgroundColor);
     font-weight: 300;
 }
-li a:hover{
-    color: var(--detailsColor);
-    text-decoration: underline;
+h6{
+    font-size: clamp(0.5em, 1vw, 0.67em);
 }
+h6:hover{
+    color: var(--detailsColor);
+    transform: scale(0.85);
+}
+ /*.menu-movil-abrir,
+.menu-movil-cerrar{
+    display: none;
+} */
 header button{
     background-color: var(--textColor);
     color: var(--backgroundColor);
     border-radius:50px;
     font-family: "Manrope", sans-serif;
-    padding: 10px 20px;
+    padding: clamp(5px, 1vw, 10px) clamp(10px, 1vh, 20px);
     font-weight: 600;
-    font-size: 0.7em;
+    font-size: clamp(0.6em, 1vw, 0.8em);
 }
 header button:hover{
     transition: scale(1.1) 2s;
     transition-timing-function: ease; /* Pregungarle esto a chatgpt*/
-    background-color: var(--detailsColor);
-    color: var(--backgroundColor);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
     box-shadow: 2px 5px 10px var(--detailsColor);
-    border: none;
-    text-decoration: underline;
+    border: 1px solid var(--textColor);
 }
 .down{
     animation: down 2s;
@@ -217,7 +226,6 @@ section a{
     width: 100%;
     background-color: var(--backgroundColor);
     color: var(--textColor);
-    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -225,7 +233,7 @@ section a{
     position: relative;
 }
 h4{
-    font-size:1.2em;
+    font-size: clamp(0.9em, 1vw, 1.2em);
     position: sticky;
     top: 46vh;
     margin-left: 2%;
@@ -243,14 +251,15 @@ h4{
 .etiquetas p{
     background-color: var(--detailsColor);
     color: var(--backgroundColor);
-    font-size: 12px;
+    font-size: clamp(0.7em, 1vw, 0.8em);
     border-radius: 15px;
-    padding: 3px 10px;
+    padding: 0.1rem 0.5rem;
 }
-.contenedor :last-child{
+.anyo{
     position: sticky;
     top: 46vh;
     margin-right: 2%;
+    font-size: clamp(0.7em, 1vw, 0.8em);
 }
 
 /*Gallery of portfolio projects when :hover */
@@ -260,7 +269,7 @@ h4{
     color: var(--backgroundColor);
     cursor: url("../img/cursor-normal-gris.png"), auto;
 }
-.contenedor:first-child:hover{
+.contenedor:first-child button:hover{
     cursor: pointer;
 }
 .JC:hover{
@@ -289,7 +298,7 @@ h4{
 .especial{
     font-size: clamp(0.8em, 2vw, 1em);
     width: 60%;
-    min-width: 300px;
+    min-width: 250px;
     font-family: "Manrope", sans-serif;
     font-weight: 600;
     display: flex;
@@ -307,15 +316,6 @@ h4{
 .plegado{
     display: none;
 }
-.Bdos,
-.Bocho{
-    border: 2px dotted;
-    background-color: var(--detailsColor);
-    color: var(--textColor);
-}
-.especial button .rojo{
-    background-color: crimson;
-}
 /* End of Gallery of Portfolio Projects */
 
 /* PORTFOLIO PROJECTS PAGES
@@ -330,17 +330,17 @@ GENERAL STRUCTURE:
 }
 aside{
     width: clamp(120px, 25vw, 200px);
-    height: 80vh;
+    height: 100vh;
     box-sizing: border-box;
-    padding: 2.5vw;
+    padding: 1.5vw;
     display: grid;
     grid-template-rows: repeat(3,1fr);
     align-items: center;
     justify-content: center;
-    gap: 1vw;
+    gap: 1vh;
     border-right: 1px solid var(--textColor);
     position: fixed;
-    top:15vh;
+    top:0;
     left: 0;
     background-color: var(--backgroundColor);
     z-index: 1; /*mirar luego bien lo de este z-index */
@@ -348,6 +348,7 @@ aside{
 h5{
     font-size: clamp(0.8em, 2.5vw, 1.2em);
     font-weight: 600;
+    align-self: flex-end;
 }
 h5 span{
     font-size:clamp(0.6em, 2.5vw, 0.7em); 
@@ -357,6 +358,7 @@ aside p{
     font-size: clamp(0.8em, 2.5vw, 1.2em);
 }
 aside img{
+    display: inline;
     width: clamp(100px, 15vw, 180px);
 }
 .etiquetas2 p{
@@ -366,7 +368,7 @@ aside img{
     border-radius: 15px;
     padding: 0.3em 1em;
     margin: 0.2rem 0.1rem 0;
-    font-size:clamp(0.6em, 2.5vw, 0.7em); 
+    font-size:clamp(0.6em, 1vw, 0.7em); 
     font-weight:300;
 }
 main{
@@ -405,8 +407,8 @@ main video{
     box-shadow: 0.3rem 0.3rem 0.5rem var(--textColor);
 }
 main video:first-child{
-    width: 40vw;
-    max-height: 75vh;
+    width: 50vw;
+    max-height: 70vh;
 }
 .ventana{
     display: grid;
@@ -449,6 +451,8 @@ main video:first-child{
 }
 .ventana-middle{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -483,44 +487,59 @@ main video:first-child{
     align-items: center;
     gap: 0.3rem;
 }
-.menciones div:first-child{
+.menciones div{
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    gap: 2vw;
 }
 .menciones p{
     font-size: 0.7em;
-    width: clamp(400px, 20vw, 25vw);
+    width: clamp(210px, 1vw, 25vw);
     max-height: 40vh;
 }
 .menciones img{
     width: clamp(200px, 40vw, 40vw);
 }
 
+
 /* Project [003]: Art&App.com */
 mark{
     background-color: var(--textColor);
     color: var(--backgroundColor);
 }
-.f_monospace{
-    width: 40vw;
+.wider-gap-responsive{
+    margin-right:0;
 }
-.f_monospace p:nth-child(3){
-    font-size: clamp(0.7em, 1.5vw, 0.9em);
-    width: 40vw;
-    margin-right: 5%;
+.wider-gap-responsive:nth-child(2){
+    margin-right: 10vw;
+}
+.f_monospace{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    font-size: clamp(0.6em, 1vw, 0.9em);
+    width: 37vw;
+    font-family: monospace;
+    max-height: 75vh;
+    padding-top: 1vh;
 }
 .primero{
     font-size: 1.5em;
+    font-family: monospace;
 }
 .painpoints{
     width: 30vw;
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
     gap: clamp(1px, 2.5vw, 3px);
     align-items: center;
     box-sizing: border-box;
+    max-height: 70vh;
 }
 .painpoints :nth-child(2),
 .painpoints :nth-child(3),
@@ -533,6 +552,12 @@ mark{
 .painpoints p{
     font-size: clamp(0.5em, 1.5vw, 0.7em);
     padding: 0.5rem;
+}
+.painpoints p:nth-child(2),
+.painpoints p:nth-child(4),
+.painpoints p:nth-child(6),
+.painpoints p:nth-child(8){
+    width: 40vw
 }
 
 /*[004] Burst Project*/
@@ -561,8 +586,8 @@ mark{
     box-shadow: 2px 2px 5px var(--textColor);
 }
 .ventana img.medium{
-    width: 20vw;
-    max-height: 50vh;
+    max-width: 20vw;
+    max-height: 60vh;
 }
 
 /*Botón next */
@@ -592,8 +617,13 @@ mark{
 .horizontal{
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 2%;
+}
+.arriba{
     align-items: flex-start;
-    justify-content: space-between;
 }
 .agrupado{
     flex-wrap: wrap;
@@ -612,6 +642,9 @@ mark{
 .little-details img{
     border-radius: 50%;
     width: 20vw;
+}
+.premios{
+    margin-top: none;
 }
 .premios div{
     display: grid;
@@ -657,18 +690,18 @@ mark{
 }
 a.subsection{
     width: auto;
-    font-size: clamp(0.7em, 2.5vw, 1.2em);
+    font-size: clamp(1em, 1vw, 1.2em);
     font-weight: 600;
     color: var(--textColor);
     background-color: var(--backgroundColor);
+    padding-top: 1rem;
 }
 .subsection p{
     display: inline;
 }
 .experience{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template: repeat(2, 1fr) / repeat(2, auto);
     gap: 0.5% 0.5%;
     padding: 1vh 0;
 }
@@ -696,7 +729,7 @@ a.subsection{
 .project-details p,
 .education p{
     font-weight: 600;
-    font-size: clamp(1em, 1vw, 1.2em);
+    font-size: clamp(0.8em, 1vw, 1em);
     line-height: 1em;
 }
 .project-details p span,
@@ -712,14 +745,13 @@ a.subsection{
     padding: 0.5rem;
     line-height: 1em;
     display: inline-block;
+    text-align: center;
 }
 .skills{
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    align-self: flex-start;
     gap: 1% 2%;
 }
 .skills .bloque{
@@ -780,11 +812,16 @@ a.subsection{
     box-sizing: border-box;
     padding: 2vw;
 }
+.playground .ventana-top p {
+    font-size: clamp(0.6em, 1vw, 1em);
+}
 .exp{
+    position: relative;
+    top: 60%;
     max-width: 20vw;
     margin-top: 1rem;
     font-size: clamp(0.5em, 1vw, 0.7em);
-    padding: 1rem;
+    padding: clamp(0.5rem, 1vw, 1rem);
 }
 .desplazada{
     display: flex;
@@ -802,9 +839,6 @@ a.subsection{
     text-align: right;
     max-width: 10vw;
 }
-.desplazada:nth-child(3){
-    left: -5%;
-}
 .desplazada:nth-child(3) p.exp{
     max-width: 20vw;
 }
@@ -818,6 +852,7 @@ a.subsection{
 .tv{
     height: 60vh;
     width: 25vw;
+    background-color: blue;
 }
 .sun{
     background-color: var(--textColor);
@@ -838,9 +873,6 @@ a.subsection{
     background-color: #FF8C42;
     animation:sun 1s ease infinite, west 1s ease infinite;
     animation-direction: reverse;
-}
-.tv{
-    background-color: blue;
 }
 .pelota{
     width: 4em;
@@ -872,9 +904,6 @@ a.subsection{
     transition: transform 0.4s ease, background-color 0.6s ease-in, left 0.3s linear, top 0.3s linear;
   }
 
-
-
-
 /* Contact Page */
 .contacto{
     width: 100%;
@@ -899,6 +928,20 @@ a.subsection{
     color: var(--detailsColor);
 }
 /* End of Contact Page */
+
+.medio{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--textColor);
+    color: var(--backgroundColor);
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    position: fixed;
+    top: 0;
+    padding: 20%;
+}
 
 /* KEYFRAMES FOR ANIMATING TRANSITIONS */
 @keyframes fade{
@@ -992,23 +1035,147 @@ a.subsection{
     }
 }
 
-.medio{
-    display: none;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--textColor);
-    color: var(--backgroundColor);
-    justify-content: center;
-    align-items: center;
-    font-size: 1em;
-    position: fixed;
-    top: 0;
-    padding: 20%;
-}
 
-@media screen and (max-width: 50px) {
+@media screen and (max-width: 300px) {
     .medio{
         display: flex;
-        z-index: 6;
+        z-index: 3;
     }
 }
+@media screen and (max-height: 300px) {
+    .medio{
+        display: flex;
+        z-index: 3;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .wider-gap-responsive{
+        padding-right: 40vw;
+    }
+}
+
+@media screen and (max-width:373px) {
+    .bigger{
+        padding-right: 60vw;
+    }
+}
+
+@media screen and (max-height: 360px) {
+    aside img{
+        display: none;
+    }
+    .wider-gap-responsive:nth-child(2) .ventana-bottom,
+    .wider-gap-responsive:nth-child(2) .ventana-top img{
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+
+    main{
+        left: 45vw;
+    }
+    .horizontal{
+        flex-wrap: wrap;
+    }
+    .experience{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .premios{
+        margin-top: 3vh;
+    }
+    .playground{
+        left: 120px;
+        width: auto;
+    }
+    .desplazada{
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .desplazada:nth-child(1) p.exp,
+    .desplazada:nth-child(2) p.exp,
+    .desplazada:nth-child(3) p.exp{
+        max-width: 40vw;
+    }
+    .tv{
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width:600px){
+    .desplazada{
+        position: static;
+    }
+}
+    
+
+    /*nav{
+        position: fixed;
+        top: -50vh;
+        transition:top 0.8s;
+        background-color: var(--textColor);
+        padding: 0.3rem;
+        width:auto;
+        height:auto;
+    }
+    .desplegado{ /* esta clase se la pondremos al nav*/
+       /* top: calc(7.5vh + 30px);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    li a{
+        background-color: var(--textColor);
+        color: var(--backgroundColor);
+        border: 1px solid var(--backgroundColor);
+    }
+    li a:hover{
+        background-color: var(--detailsColor);
+        color: var(--textColor);
+        border: 1px solid var(--textColor);
+    }
+    .menu-movil-abrir{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: var(--backgroundColor);
+        border:1px solid var(--textColor);
+        border-radius: 50%;
+        box-sizing: border-box;
+        padding: 6px 5px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: calc(7.5vh - 15px);
+        right: calc(2vw + 15px);
+    }
+    .menu-movil-abrir span{
+        display: block;
+        height: 2px;
+        width: 20px;
+        background-color: var(--textColor);
+    }
+    .menu-movil-cerrar{
+        display: block;
+        border: none;
+        background-color: transparent;
+        color: var(--textColor);
+        font-size: 1em;
+        position:absolute;
+        top: calc(7.5vh - 15px);
+        right: calc(2vw + 15px);
+    }
+    header .cta{
+        display: none;
+        /*
+        padding: 5px 10px;
+        font-weight: 500;
+        font-size: 0.6em;
+        align-self: center;
+        position: absolute;
+        top: calc(7.5vh - 15px);
+        right: calc(50% - 30px);*/ 
+/*    }*/
+    

@@ -57,11 +57,11 @@
                     <p>[001] Landing Page</p>
                     <img src="img/diana.png" alt="Diana" id="landing">
                 </div>
-                
-                <video loop="true" autoplay="autoplay" controls>
-                    <source src="vid/JC-paginaprincipal.mp4" type="video/mp4">
-                </video>
-
+                <div class="ventana-middle">
+                    <video loop="true" autoplay="autoplay" controls>
+                        <source src="vid/JC-paginaprincipal.mp4" type="video/mp4">
+                    </video>
+                </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
                     <img src="img/codigo-de-barras.png" alt="Código de barras">
@@ -74,9 +74,11 @@
                     <p>[002] Portfolio</p>
                     <img src="img/diana.png" alt="Diana" id="portfolio">
                 </div>
-                <video loop="true" autoplay="autoplay" controls>
-                    <source src="vid/JC-paginaportfolio.mp4" type="video/mp4">
-                </video>
+                <div class="ventana-middle">
+                    <video loop="true" autoplay="autoplay" controls>
+                        <source src="vid/JC-paginaportfolio.mp4" type="video/mp4">
+                    </video>
+                </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
                     <img src="img/codigo-de-barras.png" alt="Código de barras">
@@ -88,7 +90,9 @@
                     <p>[003] Contact</p>
                     <img src="img/diana.png" alt="Diana" id="contact">
                 </div>
-                <img id="contact" src="img/JC-prototipo-contact.png" alt="Screenshot de Página de Contacto">
+                <div class="ventana-middle">
+                    <img id="contact" src="img/JC-prototipo-contact.png" alt="Screenshot de Página de Contacto">
+                </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
                     <img src="img/codigo-de-barras.png" alt="Código de barras">
@@ -100,7 +104,9 @@
                     <p>[004] Full High-Fidelity Prototype</p>
                     <img src="img/diana.png" alt="Diana">
                 </div>
-                <img width="600xp" src="img/JC-entero.png" alt="Vista completa del proyecto">
+                <div class="ventana-middle">
+                    <img src="img/JC-entero.png" alt="Vista completa del proyecto">
+                </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
                     <img src="img/codigo-de-barras.png" alt="Código de barras">
@@ -111,9 +117,20 @@
         </main>
     </section>
     <script>
-        window.addEventListener("wheel", evento => {
-            window.scrollTo(window.scrollX + evento.deltaY, 0);
-        });
+        let startX = 0;
+
+window.addEventListener("touchstart", evento => {
+  startX = evento.touches[0].clientX;
+});
+
+window.addEventListener("touchmove", evento => {
+  const currentX = evento.touches[0].clientX;
+  const deltaX = startX - currentX;
+  startX = currentX;
+  
+  window.scrollTo(window.scrollX + deltaX, 0);
+});
+
     </script>
 </body>
 </html>
