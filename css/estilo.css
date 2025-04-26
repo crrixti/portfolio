@@ -1108,6 +1108,25 @@ a.subsection{
         position: static;
     }
 }
+#rotate-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* fondo oscuro semitransparente */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    text-align: center;
+    z-index: 99999;
+    pointer-events: none; /* opcional, para que no bloquee si quieres */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
     
 
     /*nav{
