@@ -2,9 +2,7 @@
  DESCRIPTION: This HTML document shows the funniest part!!! Some side experimental visuals coded with JavaScript.
  GENERAL STRUCTURE. Please note all solo-projects HTML pages follow the same structure:
     - Header: Home button (h2), Navigation menu, and Contact button.
-    - Page content: 
-        - Left side: what is this page about 
-        - Right and scroll part: experimental projects accompanied by its correspondents little reflections.
+    - Page content: introduction to the page and experimental projects, some parts of them are made with AI.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +16,11 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+    <!-- 
+    SCREEN & DEVICE CHECK.
+    Description: This site has been designed to be watched on 'landscape mode'. In addition, since the minimum screen width currently on use are about 350px, the site has been designed to work on screens wider than 300px (just in case I do not exclude anyone ;) ). 
+    These two classes ".rotar" and ".medio" have been made to ensure that users meet these two requirements and have a proper experience while browsing this site.
+    -->
     <div class="rotar">
         <img src="img/rotado.png" alt="Rotate your devide to landscape mode">
         Please rotate your device to landscape mode to enjoy a top-notch experience and resize if needed.
@@ -25,11 +28,14 @@
     <div class="medio">
         <p>Please switch to a screen<br>wider than 300px to <br>enjoy a top-notch experience while <br>browsing this site ;) </p>
     </div>
-    <!--Header of the site, it is the same for all pages-->
+    
+    <!--
+    HEADER
+    Description: it is the same for all pages.-->
     <header class="opaco">
         <!--Link for going back to Home Page. Also we use tag it as h2 because it contains the portfolio's owner name and for SEO optimization-->
         <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
-        <!--Navigation menu-->
+        <!--Navigation Menu-->
         <nav>
             <ul>
                 <li><a href="proyectos.html"><h6>Projects</h6></a></li>
@@ -41,11 +47,20 @@
         <a href="contacto.html"><button>Contact</button></a>
     </header>
     
+    <!--
+    PROJECT CONTENT SECTION
+    Description: 
+        - Aside: explanation of why this page is included in the portfolio. This is a non interactive part that remains visible for the user all the time.
+        - Main: experimental projects accompanied by its correspondents little reflections.-->
     <section class="contenido">
         <aside>
             <p class="exp">Playground is a space for intentional exploration and playful experimentation. Each animation is a tiny study in movement and interaction. Through code, color, and a bit of chaos, Playground invites curiosity to take the lead and reminds that making is most alive when it's not afraid to play.</p>
         </aside>
 
+        <!--
+        PLAYGROUND
+        Description: This section is an informal place to call reflection and inspiration, and that is why the class "desplazada" helps to position the ventanas in a different place they would be expected to be. Also the size of the ventanas is different in each of them, and their own explanation text adopts different positions and width sizes on purpose
+        -->
         <div class="playground">
             <div class=" desplazada">
                 <div class="ventana">
@@ -62,7 +77,7 @@
                     </div>
                     <div class="ventana-bottom">
                         <img src="img/diana.png" alt="Diana">
-                        <img src="img/codigo-de-barras.png" alt="Código de barras">
+                        <img src="img/codigo-de-barras.png" alt="Bar Code">
                         <img src="img/diana.png" alt="Diana">
                     </div>
                 </div>
@@ -84,7 +99,7 @@
                     </div>
                     <div class="ventana-bottom">
                         <img src="img/diana.png" alt="Diana">
-                        <img src="img/codigo-de-barras.png" alt="Código de barras">
+                        <img src="img/codigo-de-barras.png" alt="Bar Code">
                         <img src="img/diana.png" alt="Diana">
                     </div>
                 </div>     
@@ -101,10 +116,11 @@
                             <div class="bicho"></div>
                         </div>
                     </div>
+                    <!--The atribute style helps this paragraph to work as a caption.-->
                     <p style="font-size: 0.6em;">Play with the mouse putting it in and out the ball.</p>
                     <div class="ventana-bottom">
                         <img src="img/diana.png" alt="Diana">
-                        <img src="img/codigo-de-barras.png" alt="Código de barras">
+                        <img src="img/codigo-de-barras.png" alt="Bar-Code">
                         <img src="img/diana.png" alt="Diana">
                     </div>
                 </div>
@@ -118,6 +134,32 @@
     </div>
     <script>
 
+        /*STRUCTURE OF JAVASCRIPT CODE FOR INDEX.HTML
+            1. Check device orientation
+            2. Experimental animation [002] t1kTØk killed the TV star
+            3. Experimental animation [003] impaKt
+        */
+
+        /* 1. Check device orientation */
+        function checkOrientacion() {
+            const msg = document.querySelector(".rotar");
+
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                // If it is not in "landscape" mode, it shows the warning message
+                msg.style.display = "flex";
+            } else {
+                // If it is already in "landscape" mode, it does not show the warning message
+                msg.style.display = "none";
+            }
+        }
+        // Check when loading, resizing or the orientation of the device changes
+        window.addEventListener('load', checkOrientacion);
+        window.addEventListener('resize', checkOrientacion);
+        window.addEventListener('orientationchange', checkOrientacion);
+
+        /* End of 1. Check device orientation */
+
+        /* 2. Experimental animation [002] t1kTØk killed the TV star */
             const contenedor = document.querySelector('.obra.tv');
             const pelota = document.querySelector('.pelota');
 
@@ -135,7 +177,7 @@
                 return color;
             }
 
-            function moverPelota() {
+            function moverPelota() { /* AI was used to build this function*/
                 const maxX = contenedor.clientWidth - pelota.clientWidth;
                 const maxY = contenedor.clientHeight - pelota.clientHeight;
 
@@ -162,18 +204,18 @@
 
                 requestAnimationFrame(moverPelota);
             }
-
             moverPelota();
+            /* End of 2. Experimental animation [002] t1kTØk killed the TV star */
 
-           
+           /* 3. Experimental animation [003] impaKt */
             const zona = document.querySelector('.obra.impact');
             const bicho = document.querySelector('.bicho');
 
-            function getRandom(min, max) {
+            function getRandom(min, max) { /* AI was used to build this function*/
                 return Math.random() * (max - min) + min;
             }
 
-            function moverBicho() {
+            function moverBicho() { /* AI was used to build this function*/
                 const maxX = zona.clientWidth - bicho.clientWidth;
                 const maxY = zona.clientHeight - bicho.clientHeight;
 
@@ -189,6 +231,7 @@
             }
 
             bicho.addEventListener('mouseenter', moverBicho);
+            /* End of Experimental animation [003] impaKt*/
 
 
     </script>

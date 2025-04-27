@@ -111,7 +111,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -128,7 +128,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>  
             </div>
@@ -143,7 +143,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -160,7 +160,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -171,11 +171,37 @@
     </section>
 
     <script>
+        /*STRUCTURE OF JAVASCRIPT CODE FOR INDEX.HTML
+            1. Check device orientation
+            2. Horizontal scroll in <main>
+        */
+
+        /* 1. Check device orientation */
+        function checkOrientacion() {
+            const msg = document.querySelector(".rotar");
+
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                // If it is not in "landscape" mode, it shows the warning message
+                msg.style.display = "flex";
+            } else {
+                // If it is already in "landscape" mode, it does not show the warning message
+                msg.style.display = "none";
+            }
+        }
+        // Check when loading, resizing or the orientation of the device changes
+        window.addEventListener('load', checkOrientacion);
+        window.addEventListener('resize', checkOrientacion);
+        window.addEventListener('orientationchange', checkOrientacion);
+
+        /* End of 1. Check device orientation */
+
+        /* 2. Horizontal scroll in <main> */
         // Catch when the mouse wheel moves
         window.addEventListener("wheel", evento => { 
             // Move the page horizontally based on the vertical scroll movement (deltaY)
             window.scrollTo(window.scrollX + evento.deltaY, 0); //window.scrollX is the current horizontal scroll position and evento.deltaY represents the vertical scroll amount, we add it to scroll horizontally
         });
+        /* End of 2. Horizontal scroll in <main> */
     </script>
 </body>
 </html>
