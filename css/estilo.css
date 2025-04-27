@@ -931,17 +931,10 @@ a.subsection{
 }
 /* End of Contact Page */
 /* Adjustments to ensure a proper User Experience*/
-.rotar{
-    display: flex;
-    z-index: 3;
-    opacity: 0;
-}
-.medio{
-    display: none;
-    z-index: 4;
-}
+
 .rotar,
 .medio{
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -951,9 +944,15 @@ a.subsection{
     color: var(--backgroundColor);
     align-items: center;
     justify-content: center;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
-  }
+}
+.rotar{
+    z-index: 3;
+}
+.medio{
+    z-index: 4;
+}
 
 
 /* KEYFRAMES FOR ANIMATING TRANSITIONS */
