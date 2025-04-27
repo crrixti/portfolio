@@ -1043,7 +1043,6 @@ p.subsection{
     }
 }
 
-
 @media screen and (max-width: 300px) {
     .medio{
         display: flex;
@@ -1055,11 +1054,11 @@ p.subsection{
     }
 }
 
-@media screen and (max-width:420px) {
+ /* @media screen and (max-width:420px) {
     .wider-gap-responsive{
         padding-right: 40vw;
     }
-}
+} */
 
 @media screen and (max-width:373px) {
     .bigger{
@@ -1075,9 +1074,22 @@ p.subsection{
     .wider-gap-responsive:nth-child(2) .ventana-top img{
         display: none;
     }
+    .wider-gap-responsive{
+        padding-right: 30vw;
+    }
 }
 
+@media screen and (max-height: 500px) and (max-height: 360px) {
+    .wider-gap-responsive{
+        padding-right: 50vw;
+    }
+}
 
+@media screen and (max-height: 500px) {
+    .painpoints{
+        grid-template: repeat(4, auto) / 1fr 25vw 1fr 25vw;
+    }
+}
 
 @media screen and (max-width: 500px) {
 
