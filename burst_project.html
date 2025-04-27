@@ -1,3 +1,11 @@
+<!-- 
+ DESCRIPTION: This HTML document shows the '[004] Burst Project' project.
+ GENERAL STRUCTURE. Please note all solo-projects HTML pages follow the same structure:
+    - Header: Home button (h2), Navigation menu, and Contact button.
+    - Project content: 
+        - Left side: main projects details.
+        - Right and horizontal scroll part: project images, videos and/or some text explanations such as the brief.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +18,11 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+    <!-- 
+    SCREEN & DEVICE CHECK.
+    Description: This site has been designed to be watched on 'landscape mode'. In addition, since the minimum screen width currently on use are about 350px, the site has been designed to work on screens wider than 300px (just in case I do not exclude anyone ;) ). 
+    These two classes ".rotar" and ".medio" have been made to ensure that users meet these two requirements and have a proper experience while browsing this site.
+    -->
     <div class="rotar">
         <img src="img/rotado.png" alt="Rotate your devide to landscape mode">
         Please rotate your device to landscape mode to enjoy a top-notch experience and resize if needed.
@@ -17,11 +30,14 @@
     <div class="medio">
         <p>Please switch to a screen<br>wider than 300px to <br>enjoy a top-notch experience while <br>browsing this site ;) </p>
     </div>
-    <!--Header of the site, it is the same for all pages-->
-    <header class="opaco">
+    
+    <!--
+    HEADER
+    Description: it is the same for all pages.-->
+    <header class="down">
         <!--Link for going back to Home Page. Also we use tag it as h2 because it contains the portfolio's owner name and for SEO optimization-->
         <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
-        <!--Navigation menu-->
+        <!--Navigation Menu-->
         <nav>
             <ul>
                 <li><a href="proyectos.html"><h6>Projects</h6></a></li>
@@ -33,9 +49,16 @@
         <a href="contacto.html"><button>Contact</button></a>
     </header>
 
+     <!--
+    PROJECT CONTENT SECTION
+    Description: 
+        - Aside: project details and skills showed. This is a non interactive part that remains visible for the user all the time.
+        - Main: project media and texts about project process and final results-->
     <section class="contenido">
         <aside>
+            <!--Project Title-->
             <h5>Burst Project <br><span style="font-size:0.6em; font-weight:400;">Agencia Web Creativa</span></h5>
+            <!--Showed Skills-->
             <div class="etiquetas2">
                 <p>CMS</p>
                 <p>Wordpress</p>
@@ -43,11 +66,25 @@
                 <p>Creative Direction</p>
                 <p>SEO</p>
             </div>
+            <!--Year of completation-->
             <p>2024</p>
         </aside>
 
         <main>
-            
+            <!--
+            VENTANA
+            Description: Main is divided into "ventana" sub-sections, which are a resource I invented to normalize the layout of all images and make a coherent design. They are all placed horizontally and compossed by:
+                - Ventana-top: title of the media and a small decoration image on the top corner
+                - Ventana-middle: media content 
+                - Ventana-bottom: small decoration images at the bottom corners and at the center
+            This page also contains 'ventana-texto', which is another kind of ventana that instead of showing media content in the middle, contains some text and do not contain decoration pictures in the corners and bottom.
+            -->
+
+            <!--Before showing the whole-->
+            <!--
+            The atribute 'autoplay' makes the video start automatically once the page is loaded. 
+            The 'loop' ensures the video plays again automatically after it finish.
+            The atribute 'controls' shows the user the essential buttons to pause and play the video-->
             <video class="portada" loop="true" autoplay="autoplay" controls>
                 <source src="vid/BurstProject.mp4" type="video/mp4">
             </video>

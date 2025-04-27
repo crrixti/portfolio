@@ -1,3 +1,9 @@
+<!-- 
+ DESCRIPTION: This HTML document contains the list of projects that compose the portfolio.
+ GENERAL STRUCTURE:
+    - Header: Home button (h2), Navigation menu, and Contact button
+    - Gallery of portfolio projects, same as in index.html.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +14,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Press+Start+2P&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
+    <script defer src="js/funciones.js"></script>
 </head>
 <body>
+    <!-- 
+    SCREEN & DEVICE CHECK.
+    Description: This site has been designed to be watched on 'landscape mode'. In addition, since the minimum screen width currently on use are about 350px, the site has been designed to work on screens wider than 300px (just in case I do not exclude anyone ;) ). 
+    These two classes ".rotar" and ".medio" have been made to ensure that users meet these two requirements and have a proper experience while browsing this site.
+    -->
     <div class="rotar">
         <img src="img/rotado.png" alt="Rotate your devide to landscape mode">
         Please rotate your device to landscape mode to enjoy a top-notch experience and resize if needed.
@@ -17,11 +29,14 @@
     <div class="medio">
         <p>Please switch to a screen<br>wider than 300px to <br>enjoy a top-notch experience while <br>browsing this site ;) </p>
     </div>
-    <!--Header of the site, it is the same for all pages-->
-    <header class="opaco">
+    
+    <!--
+    HEADER
+    Description: it is the same for all pages.-->
+    <header class="down">
         <!--Link for going back to Home Page. Also we use tag it as h2 because it contains the portfolio's owner name and for SEO optimization-->
         <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
-        <!--Navigation menu-->
+        <!--Navigation Menu-->
         <nav>
             <ul>
                 <li><a href="proyectos.html"><h6>Projects</h6></a></li>
@@ -33,103 +48,78 @@
         <a href="contacto.html"><button>Contact</button></a>
     </header>
 
-    <section style="position: absolute; top: 15vh;">
-            <div class="contenedor">
-                <h4>[000] Portfolio</h4>
-                <div class="interactivo">
-                    <p style="font-size: 0.6em; width: 100%;">Click all white buttons</p>
-                    <p class="especial">This website has been &nbsp;<button class="Buno">designed</button><button class="Bdos plegado">coding</button><span class="Btres plegado"> &nbsp; manually &nbsp;</span><span class="Bcuatro plegado">100% </span><button class="Bcinco">without preservatives</button> <span class="Bseis plegado">&nbsp; or &nbsp;</span><button class="Bocho plegado">colorants.</button><span class="Bsiete plegado"> &nbsp; Either any visual constructor was used, only  <span style="color: red; text-decoration: underline;">creativity. <a style="color:red" href="https://github.com/crrixti/portfolio"> Link to GitHub</a></span></span></p>
-                </div>
-                <div class="etiquetas">
-                    <p>HTML5</p>
-                    <p>CSS3</p>
-                    <p>JavaScript</p>
-                    <p>Front-End Dev</p>
-                </div>
-                <p class="anyo">2025</p>
+    <!--
+    GALLERY OF PROJECTS SECTION (same as in index.html)
+    DESCRIPTION:This Gallery of portfolio projects gives to the user a quick view into the details of each project and has a interactive background that is only visible when the user hover over it with their mouse. Every project contains:
+        - Project title
+        - Skills showed in the project, such as UX Research, HTML5, JavaScript, etc.
+        - Year
+    -->
+    <section style="position: absolute; top: 15vh;"> <!--Since the header is out of the normal flow, these style atributes ensure the header does not interference visually with this section-->
+        <!--There is a [000] fake project at the very beggining of this section to call the attention of users. Once in here, the user sees an interactive text with buttons that shows more hidden text when the user touches the buttons. It works as playful part to keep the user engaged and make them participate, not only watch. -->
+        <div class="contenedor">
+            <h4>[000] Portfolio</h4>
+            <div class="interactivo">
+                <p style="font-size: 0.6em; width: 100%;">Click all white buttons</p>
+                <p class="especial">This website has been &nbsp;<button class="Buno">designed</button><button class="Bdos plegado">coding</button><span class="Btres plegado"> &nbsp; manually &nbsp;</span><span class="Bcuatro plegado">100% </span><button class="Bcinco">without preservatives</button> <span class="Bseis plegado">&nbsp; or &nbsp;</span><button class="Bocho plegado">colorants.</button><span class="Bsiete plegado"> &nbsp; Either any visual constructor was used, only  <span style="color: red; text-decoration: underline;">creativity. <a style="color:red" href="https://github.com/crrixti/portfolio"> Link to GitHub</a></span></span></p>
             </div>
-            <a href="jc.html">
-                <div class="contenedor JC">
-                    <h4>[001] JC Showcase</h4>
-                    <div class="etiquetas">
-                        <p>Figma</p>
-                        <p>Wireframing</p>
-                        <p>High-Fidelity Prototype</p>
-                        <p>Creative Direction</p>
-                    </div>
-                    <p class="anyo">2024</p>
+            <div class="etiquetas">
+                <p>HTML5</p>
+                <p>CSS3</p>
+                <p>JavaScript</p>
+                <p>Front-End Dev</p>
+            </div>
+            <p class="anyo">2025</p>
+        </div>
+        <a href="jc.html">
+            <div class="contenedor JC">
+                <h4>[001] JC Showcase</h4>
+                <div class="etiquetas">
+                    <p>Figma</p>
+                    <p>Wireframing</p>
+                    <p>High-Fidelity Prototype</p>
+                    <p>Creative Direction</p>
                 </div>
-            </a>
-            <a href="bbdd.html">
-                <div class="contenedor BBDD">
-                    <h4>[002] BBDD in cooperation with the United Nations</h4>
-                    <div class="etiquetas">
-                        <p>Front-End Dev</p>
-                        <p>Back-End Dev</p>
-                        <p>UX Research</p>
-                        <p>UX/UI Design</p>
-                        <p>Databases</p>
-                    </div>
-                    <p class="anyo">2022</p>
+                <p class="anyo">2024</p>
+            </div>
+        </a>
+        <a href="bbdd.html">
+            <div class="contenedor BBDD">
+                <h4>[002] BBDD in cooperation with the United Nations</h4>
+                <div class="etiquetas">
+                    <p>Front-End Dev</p>
+                    <p>Back-End Dev</p>
+                    <p>UX Research</p>
+                    <p>UX/UI Design</p>
+                    <p>Databases</p>
                 </div>
-            </a>
-            <a href="art_app.html" id="proy">
-                <div class="contenedor art">
-                    <h4>[003] Art & Connect.app</h4>
-                    <div class="etiquetas">
-                        <p>UX Research</p>
-                        <p>AGILE Methodology</p>
-                        <p>Value Proposition</p>
-                    </div>
-                    <p class="anyo">2024</p>
+                <p class="anyo">2022</p>
+            </div>
+        </a>
+        <a href="art_app.html" id="proy">
+            <div class="contenedor art">
+                <h4>[003] Art & Connect.app</h4>
+                <div class="etiquetas">
+                    <p>UX Research</p>
+                    <p>AGILE Methodology</p>
+                    <p>Value Proposition</p>
                 </div>
-            </a>
-            
-            <a href="burst_project.html">
-                <div class="contenedor BP">
-                    <h4>[004] Burst Project</h4>
-                    <div class="etiquetas">
-                        <p>Wordpress</p>
-                        <p>CMS</p>
-                        <p>Low-fidelity Prototype</p>
-                        <p>SEO</p>
-                    </div>
-                    <p class="anyo">2024</p>
+                <p class="anyo">2024</p>
+            </div>
+        </a>
+        <a href="burst_project.html">
+            <div class="contenedor BP">
+                <h4>[004] Burst Project</h4>
+                <div class="etiquetas">
+                    <p>Wordpress</p>
+                    <p>CMS</p>
+                    <p>Low-fidelity Prototype</p>
+                    <p>SEO</p>
                 </div>
-            </a>
+                <p class="anyo">2024</p>
+            </div>
+        </a>
     </section>
-
-    <script>
-        const disenyada = document.querySelector(".Buno");
-        const codigo = document.querySelector(".Bdos");
-        const manualmente = document.querySelector(".Btres");
-        const cien = document.querySelector(".Bcuatro");
-        const conservantes = document.querySelector(".Bcinco");
-        const ni = document.querySelector(".Bseis");
-        const ultima = document.querySelector(".Bsiete");
-        const colorantes = document.querySelector(".Bocho");
-
-        disenyada.addEventListener("click", () => {
-            codigo.classList.remove("plegado");
-            manualmente.classList.remove("plegado");
-        });
-
-        codigo.addEventListener("click", () => {
-            cien.classList.remove("plegado");
-            manualmente.classList.remove("plegado");
-            conservantes.classList.remove("plegado");
-        });
-
-        conservantes.addEventListener("click", () => {
-            ni.classList.remove("plegado");
-            colorantes.classList.remove("plegado");
-        });
-
-        colorantes.addEventListener("click", () => {
-            ultima.classList.remove("plegado");
-        });
-        
-    </script>
 </body>
 </html>
     
