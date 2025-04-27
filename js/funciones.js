@@ -1,3 +1,35 @@
+/*/ Detect if the device is tactil (mobile or tablet)
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+// Select the <main> element
+const main = document.querySelector('main');
+
+// If it's a touch device, set overflow-y to hidden
+if (isTouchDevice && main) {
+  main.style.overflowY = 'hidden';
+} */
+
+
+
+
+function checkOrientacion() {
+    const msg = document.querySelector(".rotar");
+
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        // If it is not in "landscape" mode, it shows the warning message
+        msg.style.display = "flex";
+    } else {
+        // If it is already in "landscape" mode, it does not show the warning message
+        msg.style.display = "none";
+    }
+}
+    // Check when loading, resizing or the orientation of the device changes
+    window.addEventListener('load', checkOrientacion);
+    window.addEventListener('resize', checkOrientacion);
+    window.addEventListener('orientationchange', checkOrientacion);
+
+
+
 //Selection of texts and buttons for making interactive the [000] project text.
 const disenyada = document.querySelector(".Buno");
 const codigo = document.querySelector(".Bdos");
@@ -31,24 +63,3 @@ const colorantes = document.querySelector(".Bocho");
         colorantes.addEventListener("click", () => {
             ultima.classList.remove("plegado");
         });
-
-
-        function checkOrientacion() {
-            const msg = document.querySelector(".rotar");
-    
-            if (window.matchMedia("(orientation: portrait)").matches) {
-                // If it is not in "landscape" mode, it shows the warning message
-                msg.style.display = "flex";
-            } else {
-                // If it is already in "landscape" mode, it does not show the warning message
-                msg.style.display = "none";
-            }
-        }
-            // Check when loading, resizing or the orientation of the device changes
-            window.addEventListener('load', checkOrientacion);
-            window.addEventListener('resize', checkOrientacion);
-            window.addEventListener('orientationchange', checkOrientacion);
-
-
-
-  

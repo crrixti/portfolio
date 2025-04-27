@@ -80,16 +80,15 @@
             This page also contains 'ventana-texto', which is another kind of ventana that instead of showing media content in the middle, contains some text and do not contain decoration pictures in the corners and bottom.
             -->
 
-            <!--Before showing the whole project process-->
-            <!--
-            The atribute 'autoplay' makes the video start automatically once the page is loaded. 
-            The 'loop' ensures the video plays again automatically after it finish.
-            The atribute 'controls' shows the user the essential buttons to pause and play the video-->
+            <!--Before showing the whole project process in the "ventanas", for this project I included a video with the final result.
+            - The atribute 'autoplay' makes the video start automatically once the page is loaded. 
+            - The 'loop' ensures the video plays again automatically after it finish.
+            - The atribute 'controls' shows the user the essential buttons to pause and play the video
+            -->
             <video class="portada" loop="true" autoplay="autoplay" controls>
                 <source src="vid/BurstProject.mp4" type="video/mp4">
             </video>
             
-
             <div class="ventana-texto">
                 <div class="ventana-top">
                     <p class="primero"><mark>FUNCTIONS ADDED TO THE BACK-END:</mark></p><br>
@@ -107,12 +106,15 @@
                 </div>
             </div>
         
+            <!--Since this project contains many media pictures, I decided to include an interactive index in the first ventana-->
             <div class="ventana">
                 <div class="ventana-top">
+                    <!--Index Title-->
                     <p><mark>High-Fidelity Prototype</mark></p>
+                    <!--The atribute style helps to show this paragraph as a subtitle of the index title-->
                     <p style="font-size:0.6em";>Click down to navigate </p>
                 </div>
-                
+                <!--Index Interactive Subsections-->
                 <div class="indiceBP">
                     <a href="#pp1"><img src="img/screencapture-proyecto-burstproject-1.png" alt=""></a>
                     <a href="#pp2"><img src="img/screencapture-proyecto-burstproject-2.png" alt=""></a>
@@ -130,12 +132,13 @@
                     <p>[001.1] Landing Page</p>
                     <img src="img/diana.png" alt="Diana" id="pp1">
                 </div>
+                <!--Since in this project the image size was quite large, the class "medium" will adapt the style to keep the design coherent and responsive-->
                 <div class="ventana-middle">
                     <img class="medium" src="img/screencapture-proyecto-burstproject-1.png" alt="Screenshot de Página Principal" id="pp1">
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -150,7 +153,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -165,7 +168,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -180,7 +183,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -195,7 +198,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -209,7 +212,7 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -225,7 +228,7 @@
                 
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
@@ -240,17 +243,21 @@
                 </div>
                 <div class="ventana-bottom">
                     <img src="img/diana.png" alt="Diana">
-                    <img src="img/codigo-de-barras.png" alt="Código de barras">
+                    <img src="img/codigo-de-barras.png" alt="Bar Code">
                     <img src="img/diana.png" alt="Diana">
                 </div>
             </div>
+
+            <!--All "main" sections finish with a CTA button that invites the user to visit the next project-->
             <a href="jc.html"><button class="next">Next <br>project</button></a>
         </main>
     </section>
 
     <script>
-        window.addEventListener("wheel", evento => {
-            window.scrollTo(window.scrollX + evento.deltaY, 0);
+        // Catch when the mouse wheel moves
+        window.addEventListener("wheel", evento => { 
+            // Move the page horizontally based on the vertical scroll movement (deltaY)
+            window.scrollTo(window.scrollX + evento.deltaY, 0); //window.scrollX is the current horizontal scroll position and evento.deltaY represents the vertical scroll amount, we add it to scroll horizontally
         });
     </script>
 </body>

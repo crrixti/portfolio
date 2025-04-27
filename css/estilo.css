@@ -13,8 +13,13 @@
  /*For this project we set a Custom Cursor and we want to camuflate the links*/
 html{
     cursor: url(../img/cursor-normal.png), auto;
-    /* scroll-behavior: smooth; */
-} 
+    /* Hide scroll bar in all navigators*/
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer y Edge antiguos */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
 a{
     text-decoration: none;
 }
@@ -28,7 +33,6 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow-x: hidden;
 }
 /* Header */
 header{
@@ -347,7 +351,7 @@ aside{
     top:0;
     left: 0;
     background-color: var(--backgroundColor);
-    z-index: 1; /*mirar luego bien lo de este z-index */
+    z-index: 1; 
 } 
 h5{
     font-size: clamp(0.8em, 2.5vw, 1.2em);
@@ -384,7 +388,6 @@ main{
     gap: 5%;
     position: relative;
     left: 30vw;
-    overflow-y: hidden;
 }
 
 /* Project [001]: JC Portfolio */
@@ -1039,6 +1042,12 @@ p.subsection{
         left: 100%;
     }
 }
+
+@media (pointer: coarse) {
+   main{
+    overflow-y: hidden;
+   }
+  }
 
 @media screen and (max-width: 300px) {
     .medio{
