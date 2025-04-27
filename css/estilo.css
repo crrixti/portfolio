@@ -8,7 +8,10 @@
     - Project [004]: Burst Project
 4. Resume page
 5. Playground page
-
+6. Contact page 
+7. Window checks
+8. Keyframes
+9. Media Querys
 */
 
 /* 1. NORMALIZATION */
@@ -38,7 +41,7 @@ a{
 /* End of 1. NORMALIZATION */
 
 /*2. HOMEPAGE
-DESCRIPTION: this is the very first page the user sees once the page loads.
+DESCRIPTION: front page styles and animations. The timing has been precisely taken into account when styling this page.
 GENERAL STRUCTURE:
     - Header
     - Principal Headings
@@ -353,7 +356,7 @@ h4{
 /* End of 2. HOMEPAGE */
 
 /* 3. PORTFOLIO PROJECTS PAGES
-DESCRIPTION: Every project in the portfolio has its own page showing pictures or videos of the final product. Sometimes it may inlude as well texts or an interactive index.
+DESCRIPTION: Every project in the portfolio has its own page showing pictures or videos of the final product, which requires to be given a style, specially the media width and height dimensions. Sometimes it may inlude as well texts or an interactive index that also require a different style.
 GENERAL STRUCTURE:
     - Header
     - Project Content:
@@ -665,7 +668,15 @@ mark{
 /* End of Next Project Button*/
 /* End of 3. PROJECT PAGES */
 
-/* 4. RESUME PAGE */
+/* 4. RESUME PAGE
+DESCRIPTION: This page is styled as my CV.pdf, here are styled all the subsection and layouts.
+GENERAL STRUCTURE: 
+- Introduction: profile picture, about me paragraph and awards.
+- Experience
+- Education
+- Skills
+ */
+
 .cv{ /* Since this is a section, everything is already aligned a justified in the center and the items will be displayed in flex-column orientation */
     box-sizing: border-box;
     padding: 0 2vw;
@@ -683,8 +694,9 @@ mark{
 }
 .agrupado{
     flex-wrap: wrap;
-    align-content:flex-start ;
+    align-content:flex-start;
 }
+/* Introduction */
 .little-details{
     align-items: center;
     padding: 17vh 0 2vh;
@@ -718,11 +730,14 @@ mark{
 .premios img{
     width:clamp(25px, 0.5vw,3vw);
 }
-.bloque{
+/* End of Introduction*/
+
+/* Experience & Education*/
+.bloque{ /* This resource will be used to group the experiences or education info together*/
     background-color: #e5e5e5;
     border-radius: 20px;
 }
-.imagen{
+.imagen{ /* This resource will be used style the images as rounded icons*/
     border-radius: 50%;
     width: 4em;
     aspect-ratio: 1 / 1;
@@ -739,7 +754,7 @@ mark{
 .project:nth-child(4) .imagen{
     background: white url("../img/logo-ford.jpg") no-repeat center /contain;
 }
-.subsection{ /* Al estar dentro de una section ya tiene display flex*/
+.subsection{ /* Since this is inside a section, it is already in display:flex*/
     flex-wrap: wrap;
     align-content: flex-start;
     align-self: flex-start;
@@ -801,39 +816,6 @@ p.subsection{
     display: inline-block;
     text-align: center;
 }
-.skills{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    gap: 1% 2%;
-}
-.skills .bloque{
-    padding: 2% 5%;
-}
-.skills .bloque p{
-    font-size: clamp(0.7em, 1vw, 0.8em);
-    padding-bottom: 2%;
-}
-.enlace{
-    width: auto;
-    align-self: flex-start;
-    flex-wrap: wrap;
-    align-content: flex-start;
-}
-.enlace .imagen{
-    width: 2em;
-}
-.enlace a:nth-child(1){
-    background: var(--backgroundColor) url("../img/RESUME-logo-GitHub.png") no-repeat center /contain;
-}
-.enlace a:nth-child(2){
-    background: var(--backgroundColor) url("../img/RESUME-logo-LinkedIn.webp") no-repeat center /contain;
-}
-.education .imagen{
-    width: 3em;
-    height: 3em;
-}
 .education:nth-child(1) div{
     background: white url("../img/RESUME-logo-CEI.webp") no-repeat center /contain;
 }
@@ -852,9 +834,34 @@ p.subsection{
     gap:1% 2%;
     padding: 3%;
 }
+/* End of Experience & Education */
+/* Skills */
+.skills{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1% 2%;
+}
+.skills .bloque{
+    padding: 2% 5%;
+}
+.skills .bloque p{
+    font-size: clamp(0.7em, 1vw, 0.8em);
+    padding-bottom: 2%;
+}
+/* End of Skills*/
 /* End of 4. RESUME PAGE */
 
-/* 5. PLAYGROUND PAGE */
+/* 5. PLAYGROUND PAGE
+DESCRIPTION: Styles for the experimental side projects and their explanation texts.
+GENERAL STRUCTURE: 
+    - Header
+    - Canvas:
+        - Aside: left side fixed on the screen with the purpose of this page
+        - Main: right part, which occupies most of the screen. Shows the three experimental projects positioned not in normal flow and not where they would be expected to be. Also the size of the ventanas is different in each of them, and their own explanation text adopts different positions and width sizes on purpose.
+ */
+ /* Content area */
 .playground{ 
     width: 85%;
     position: absolute;
@@ -870,6 +877,7 @@ p.subsection{
 .playground .ventana-top p {
     font-size: clamp(0.6em, 1vw, 1em);
 }
+/* End of Content area */
 /* Text explanation of the art piece */
 .exp{
     position: relative;
@@ -879,6 +887,9 @@ p.subsection{
     font-size: clamp(0.5em, 1vw, 0.7em);
     padding: clamp(0.5rem, 1vw, 1rem);
 }
+/* End of Text explanation of the art piece */
+
+/* Positioning of ventanas out of regular flow */
 .desplazada{
     display: flex;
     position: relative;
@@ -905,6 +916,9 @@ p.subsection{
     border: var(--textColor) solid 2px;
     overflow: hidden;
 }
+/* End of Positioning of ventanas out of regular flow */
+
+/* Special style for the animations */
 .tv{
     height: 60vh;
     width: 25vw;
@@ -959,8 +973,16 @@ p.subsection{
     left: 0;
     transition: transform 0.4s ease, background-color 0.6s ease-in, left 0.3s linear, top 0.3s linear;
   }
+/* End of special styles for the animations */
+/* End of 5.PLAYGROUND PAGE*/
 
-/* Contact Page */
+
+/* 6. CONTACT PAGE
+DESCRIPTION: this page keeps the style as minimal as possible, so that it does not distract the user from taking the expected action: see the e-mail and approach me.
+STRUCTURE: 
+  - Header
+  - Personal e-mail
+*/
 .contacto{
     width: 100%;
     height: 85vh;
@@ -983,9 +1005,11 @@ p.subsection{
     text-decoration: underline;
     color: var(--detailsColor);
 }
-/* End of Contact Page */
+/* End of 6. CONTACT PAGE */
 
-/* Adjustments to ensure a proper User Experience*/
+/* 7. WINDOW CHECKS
+Description: if the user is not on "landscape" mode or their screen device is <300px, the correspondent message will show on their screen to prevent them and ensure a proper user experience. Here is the style of that message: 
+ */
 .rotar,
 .medio{
     display: none;
@@ -1002,15 +1026,20 @@ p.subsection{
     font-size: 1.5em;
     text-align: center;
 }
+/* Please note that the message of "change to a wider screen" has priority over the "rotate your device" one.*/
 .rotar{
     z-index: 3;
 }
 .medio{
     z-index: 4;
 }
+/* End of 7. WINDOW CHECKS */
 
+/* 8. KEYFRAMES
+Description: the document contains some animations in the front page and the playground page that are styled as the follows: 
+*/
 
-/* KEYFRAMES FOR ANIMATING TRANSITIONS */
+/* H1 animation that makes its characters appears on the screen one by one */
 @keyframes fade{
     0%{
         opacity: 0;
@@ -1023,6 +1052,7 @@ p.subsection{
     }
 }
 
+/* Header animation that allows it to fall down into the screen after the H1 animation finish */
 @keyframes down {
     from{
         translate: 0 -1000px;
@@ -1034,6 +1064,7 @@ p.subsection{
     }
 }
 
+/* H3 animation that allows it to go up into the screen after the header animation finish */
 @keyframes up {
     from{
         translate: 0 1000px;
@@ -1045,6 +1076,7 @@ p.subsection{
     }
 }
 
+/* Animations for the experimental piece [001] in playground.html */
 @keyframes sun {
     0%{
         scale: 1;
@@ -1091,12 +1123,17 @@ p.subsection{
     }
 }
 
+/* 9. MEDIA QUERYS
+DESCRIPTION: the main function of the media querys in here is to add some margin or change responsive layouts in smaller screens, so that the design can adapts to all window sizes. */
+
+/* Detects if the user is using a touchable device and delete the vertical scroll in <main> */
 @media (pointer: coarse) {
    main{
     overflow-y: hidden;
    }
   }
 
+/* Shows ans alert message to the user so that they can change to a wider screen */
 @media screen and (max-width: 300px) {
     .medio{
         display: flex;
@@ -1107,12 +1144,6 @@ p.subsection{
         display: flex;
     }
 }
-
- /* @media screen and (max-width:420px) {
-    .wider-gap-responsive{
-        padding-right: 40vw;
-    }
-} */
 
 @media screen and (max-width:373px) {
     .bigger{
@@ -1133,7 +1164,7 @@ p.subsection{
     }
 }
 
-@media screen and (max-height: 500px) and (max-height: 360px) {
+@media screen and (max-width: 585px) and (max-height: 350px) {
     .wider-gap-responsive{
         padding-right: 50vw;
     }
