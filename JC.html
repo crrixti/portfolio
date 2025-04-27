@@ -11,13 +11,13 @@
 </head>
 <body>
     <div class="rotar">
-        Please rotate your device to landscape mode and resize if needed.
+        Please rotate your device to landscape mode to enjoy a top-noctch experience and resize if needed.
     </div>
     <div class="medio">
         <p>Please switch to a screen<br>wider than 300px to <br>enjoy a top-notch experience while <br>browsing this site ;) </p>
     </div>
     <!--Header of the site, it is the same for all pages-->
-    <header class="down">
+    <header class="opaco">
         <!--Link for going back to Home Page. Also we use tag it as h2 because it contains the portfolio's owner name and for SEO optimization-->
         <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
         <!--Navigation menu-->
@@ -46,7 +46,7 @@
         </aside>
 
         <main>
-            <video loop="true" autoplay="autoplay" controls>
+            <video class="portada" loop="true" autoplay="autoplay" controls>
                 <source src="vid/JC-portfolio.mp4" type="video/mp4">
             </video>
 
@@ -123,19 +123,10 @@
         </main>
     </section>
     <script>
-       /* let startX = 0;
-
-window.addEventListener("touchstart", evento => {
-  startX = evento.touches[0].clientX;
-});
-
-window.addEventListener("touchmove", evento => {
-  const currentX = evento.touches[0].clientX;
-  const deltaX = startX - currentX;
-  startX = currentX;
-  
-  window.scrollTo(window.scrollX + deltaX, 0);
-}); */
+       window.addEventListener("wheel", evento => {
+                
+                window.scrollTo(window.scrollX + evento.deltaY, 0);
+            });
 
     </script>
 </body>

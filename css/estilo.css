@@ -47,6 +47,9 @@ header{
     z-index: 2; 
     gap: 2vw;
 }
+.opaco{
+    opacity: 1;
+}
 h2{
     font-size: 1em;
     font-weight: 600;
@@ -381,7 +384,6 @@ main{
     gap: 5%;
     position: relative;
     left: 30vw;
-    overflow-y: hidden;
 }
  /* main div, 
 main video{
@@ -408,7 +410,7 @@ main video{
     border: 0.1rem solid var(--textColor);
     box-shadow: 0.3rem 0.3rem 0.5rem var(--textColor);
 }
-main video:first-child{
+.portada{
     width: 50vw;
     max-height: 70vh;
 }
@@ -930,8 +932,8 @@ a.subsection{
     color: var(--detailsColor);
 }
 /* End of Contact Page */
-/* Adjustments to ensure a proper User Experience*/
 
+/* Adjustments to ensure a proper User Experience*/
 .rotar,
 .medio{
     display: none;
