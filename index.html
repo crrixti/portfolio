@@ -195,27 +195,24 @@
         });
 
 
-
-
-
-        function checkOrientation() {
-    const message = document.getElementById('rotate-message');
+        function checkOrientacion() {
+            const msg = document.querySelector(".rotar");
     
-    if (window.innerHeight > window.innerWidth) {
-      // Estamos en vertical
-      message.style.opacity = "1";
-    } else {
-      // Estamos en horizontal
-      message.style.opacity = "0";
-    }
-  }
+            if (window.innerHeight > window.innerWidth) {
+            // Estamos en vertical
+            msg.style.display = "flex";
+            } else {
+            // Estamos en horizontal
+            msg.style.display = "none";
+            }
+        }
   
-  // Comprobar al cargar
-  window.addEventListener('load', checkOrientation);
-  
-  // Comprobar cuando gira
-  window.addEventListener('resize', checkOrientation);
-  window.addEventListener('orientationchange', checkOrientation);
+            // Comprobar al cargar
+            window.addEventListener('load', checkOrientacion);
+            
+            // Comprobar cuando gira
+            window.addEventListener('resize', checkOrientacion);
+            window.addEventListener('orientationchange', checkOrientacion);
     </script>
 </body>
 </html>
