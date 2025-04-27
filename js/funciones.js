@@ -29,6 +29,39 @@ function checkOrientacion() {
     window.addEventListener('orientationchange', checkOrientacion);
 
 
+    /*STRUCTURE OF JAVASCRIPT CODE FOR INDEX.HTML
+            - Front Page Animations.
+        */
+
+        //Selection of header and main headings in the front page
+        const titulo = document.querySelector("h1");
+        const header = document.querySelector("header");
+        const h3 = document.querySelector("h3");
+
+        //Animation functions for the header and main heading in the front page
+        //For the H1, the characters are animated one by one so I splited it and save the result in "letras" 
+        titulo.innerHTML = titulo.innerText.split("").map( c => { 
+            return c != " " ? `<span>${c}</span>` : c;
+        }).join("");
+
+        const letras = document.querySelectorAll("h1 span");
+
+        //The characters appears one after another in the front page by using a timer
+        for (let i = 0; i <letras.length; i++){
+            setTimeout(() => {
+                letras[i].classList.add("visible");
+            }, 100 * i);
+        }
+
+        //After H1 finish its animation, the header falls down to the front page
+        setTimeout(() => {
+            header.classList.add("down");
+        }, 50);
+
+        //After H1 and the header complete their animations, the H3 goes up into the front page
+        setTimeout(() => {
+            h3.classList.add("up");
+        }, 100);
 
 //Selection of texts and buttons for making interactive the [000] project text.
 const disenyada = document.querySelector(".Buno");
