@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+    <!-- 
+    SCREEN & DEVICE CHECK.
+    Description: This site has been designed to be watched on 'landscape mode'. In addition, since the minimum screen width currently on use are about 350px, the site has been designed to work on screens wider than 300px (just in case I do not exclude anyone ;) ). 
+    These two classes ".rotar" and ".medio" have been made to ensure that users meet these two requirements and have a proper experience while browsing this site.
+    -->
     <div class="rotar">
         <img src="img/rotado.png" alt="Rotate your devide to landscape mode">
         Please rotate your device to landscape mode to enjoy a top-notch experience and resize if needed.
@@ -26,11 +31,14 @@
     <div class="medio">
         <p>Please switch to a screen<br>wider than 300px to <br>enjoy a top-notch experience while <br>browsing this site ;) </p>
     </div>
-    <!--Header of the site, it is the same for all pages-->
+
+    <!--
+    HEADER
+    Description: it is the same for all pages.-->
     <header class="opaco">
         <!--Link for going back to Home Page. Also we use tag it as h2 because it contains the portfolio's owner name and for SEO optimization-->
         <a href="index.html"><h2>CRISTINA GARCÍA</h2></a>
-        <!--Navigation menu-->
+        <!--Navigation Menu-->
         <nav>
             <ul>
                 <li><a href="proyectos.html"><h6>Projects</h6></a></li>
@@ -42,7 +50,12 @@
         <a href="contacto.html"><button>Contact</button></a>
     </header>
 
+    <!--
+    CV SECTION
+    Description: This page is styled as my CV.pdf, it includes the subsections already mentioned in the beginning: experience, education, awards, etc.
+    -->
     <section class="cv">
+        <!--First block acts as an "introduction" including my picture and some little details about me-->
         <div class="horizontal little-details">
             <img src="img/FOTOPERFIL.jpg" alt="Corporate Profile Image">
             <p>Information Systems Engineer with background experience in Product Design with a UX focus. I'm currently growing and continuing my training in visual design and UI tools.</p>
@@ -50,7 +63,7 @@
                 <p class="subsection">[Awards & Recognitions]</p>
                 <div>
                     <img src="img/insignia-de-reconocimiento.png" alt="">
-                    <a style="text-decoration: underline;" href="">Honour Mention as a Recognized Women in Innovation by the Spanish Ministry</a>
+                    <a style="text-decoration: underline;" href="">Honour Mention as a Recognized Women in Innovation by the Spanish Ministry</a><!--Since we normalized all links without style in the estilo.css document, the atribute style here gives again some decoration to this link-->
                     <img src="img/copa-de-oro.png" alt="">
                     <p>1st Step into the Future 2020</p>
                     <img src="img/copa-de-oro.png" alt="">
@@ -61,12 +74,19 @@
 
         <p class="subsection">[Experience]</p> 
         <div class="experience"> 
+            <!--
+            EXPERIENCE/PROJECT BLOCKS
+            Description: this subsection summarizes every working experience I had, including my position, company name, more relevant tasks, etc. All experience/project follow the same structure-->
             <div class="bloque project">
                 <div class="project-details">
+                    <!--Company logo-->
                     <div class="imagen"></div>
+                    <!--The paragraph shows my position in the company and the span the whole offitial name of the company-->
                     <p>UX Researcher <br><span>Technical University of Berlin</span></p>
+                    <!--Period I was working in that company-->
                     <p><span>09/2023 - 10/2024</span></p>
                 </div>
+                <!--Main tasks in the company-->
                 <p>
                     • Qualitative research: Interviews with users. <br>
                     • Subsequent qualitative analysis of the interviews using UX Research techniques: user personas, user journey, user stories. <br>
@@ -110,13 +130,20 @@
             </div>
         </div>
 
+        
         <div class="horizontal arriba">
             <section>
                 <p class="subsection">[Education]</p>
                 <div class="bloque">
+                    <!--
+                    EDUCATION
+                    Description: similar to the experience/project block, this one shows what I studied and where. All education blocks follow the same structure-->
                     <div class="education">
+                        <!--Education center logo-->
                         <div class="imagen"></div>
+                        <!--What I studied-->
                         <p>Front-End Dev, Web & Graphic Design <br> <span>CEI</span></p>
+                        <!--Period I was studying there-->
                         <p><span>2024-2025</span></p>
                     </div>
                     <div class="education">
@@ -131,6 +158,9 @@
                     </div>
                 </div>
             </section>
+            <!--
+                SKILLS
+                Description: This section only contains the logo of the tools I can use or flags of languages I speak really fluent, it is divided in 3 smaller blocks: Design tools, Languages and Coding-->
             <section>
                 <p class="subsection">[Skills]</p>
                 <div class="skills">

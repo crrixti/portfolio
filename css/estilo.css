@@ -1,30 +1,49 @@
+/*     GENERAL STRUCTURE     
+1. Normalization
+2. Home page
+3. Portfolio Project Pages
+    - Project [001]: JC Showcase
+    - Project [002]: BBDD in cooperation with the United Nations
+    - Project [003]: Art&Connect.app
+    - Project [004]: Burst Project
+4. Resume page
+5. Playground page
+
+*/
+
+/* 1. NORMALIZATION */
 /*Normalization of margins and padding in all navigators*/
 *{
     margin: 0;
     padding: 0;
 }
-/*Definition of Custom Colour Palette*/
+/*Custom Colour Palette*/
 :root{
     --textColor: #484848;
     --backgroundColor: #f9f9f9;
     --detailsColor: #9f9f9f;
 }
-
- /*For this project we set a Custom Cursor and we want to camuflate the links*/
+ /*Set a Custom Cursor, hide scroll bars in all navigators and camuflate links*/
 html{
     cursor: url(../img/cursor-normal.png), auto;
-    /* Hide scroll bar in all navigators*/
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer y Edge antiguos */
+    scrollbar-width: none; /* Hide scroll bar in Firefox */
+    -ms-overflow-style: none;  /* Hide scroll bars in Internet Explorer y Edge antiguos */
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera */
+    display: none; /* Hide scroll bars in Chrome, Safari y Opera */
 }
 a{
     text-decoration: none;
 }
+/* End of 1. NORMALIZATION */
 
-/*Homepage*/
+/*2. HOMEPAGE
+DESCRIPTION: this is the very first page the user sees once the page loads.
+GENERAL STRUCTURE:
+    - Header
+    - Principal Headings
+    - Gallery of Portfolio Projects
+*/
 body{
     font-family: "Manrope", sans-serif;
     background-color: var(--backgroundColor);
@@ -51,18 +70,25 @@ header{
     z-index: 2; 
     gap: 2vw;
 }
-.opaco{
+/* The header can have two classes: either .down or .opaco. 
+    - .down -> it animates the header when loading the index.html
+    - .opaco -> it keeps the header static without animations in the rest of the .html documents
+*/
+.down{
+    animation: down 2s;
+    animation-fill-mode: forwards;
+}
+.opaco{ 
     opacity: 1;
 }
+/* Back to home page button */
 h2{
     font-size: 1em;
     font-weight: 600;
     color: var(--textColor);
     display: inline;
 }
-h2:hover{
-    transition: rotar 0.4s ease;
-}
+/* Navigation menu */
 nav ul{
     list-style:none;
     display: flex;
@@ -70,14 +96,16 @@ nav ul{
     flex-wrap: wrap;
     align-content: center;
     background-color: var(--textColor);
-    padding: clamp(5px, 1vw, 10px) clamp(7px, 1vh, 20px);
+    padding: clamp(5px, 1vw, 10px) clamp(7px, 1vh, 20px); /* clamp() helps to keep the design responsive in all windows by setting (min-width, ideal relative value, max-width) */
     border-radius: 20px;
     gap: 2vw; 
 }
+/* Navigation menu links */
 li a{
     color: var(--backgroundColor);
     font-weight: 300;
 }
+/*Navigation menu headers */
 h6{
     font-size: clamp(0.5em, 1vw, 0.67em);
 }
@@ -85,10 +113,7 @@ h6:hover{
     color: var(--detailsColor);
     transform: scale(0.85);
 }
- /*.menu-movil-abrir,
-.menu-movil-cerrar{
-    display: none;
-} */
+/* Contact button */
 header button{
     background-color: var(--textColor);
     color: var(--backgroundColor);
@@ -106,14 +131,10 @@ header button:hover{
     box-shadow: 2px 5px 10px var(--detailsColor);
     border: 1px solid var(--textColor);
 }
-.down{
-    animation: down 2s;
-    animation-fill-mode: forwards;
-}
 /* End of Header */
 
-/* Principal HTML Headings */
-section{
+/* Principal HTML Headings in the Home page */
+section{ /* Note that we stablish in here the properties of section and will use it many times as a resource in other .html pages */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -123,7 +144,7 @@ section{
 .headings{
     height: 100vh;
 }
-/* Style and animation for the principal HTML Heading*/
+/* Principal HTML Heading*/
 h1{
     font-size: clamp(3rem, 10vw, 6rem);
     margin-top: 45vh;
@@ -138,6 +159,7 @@ h1 .visible{
     animation: fade 1s;
     animation-fill-mode: forwards;
 }
+/* There is an invisible group of images positionated around the H1. They are only visible when the user hover the mouse over them, to make the design more interactive*/
 .invisible{
     position: absolute;
     top: 15vh;
@@ -210,23 +232,23 @@ h1 .visible{
     animation: fade 1s;
     animation-fill-mode: backwards;
 }
-/* El sub-header que informa de los servicios en los que estoy especializada */
 
-/* Projects and Services style and entrance animation*/
+/* Projects and Services heading*/
 h3{
     font-size: clamp(0.5rem, 5vw, 1rem);
     margin-bottom: 10vh;
     font-weight: 300;
-    text-align: center; /* Por defecto el texto se pondrá todo en la misma línea, pero cuando el navigator window ya no tenga más espacio, pasará a ponerse en 2 líneas */
+    text-align: center;
     line-height: 1em;
 }
-.up{
+.up{ /* This animation makes the H3 appears going up in the front page after the header and H1 finished their animations*/
     animation: up 3s;
     animation-fill-mode: forwards;
 }
 /* End of Principal HTML Headings */
 
 /* Gallery of Portfolio Projects */
+/* All projects (except the [000], which is explained in index.html) are clickable and guide the user to the project page once they click on it */
 section a{
     width: 100%;
 }
@@ -240,6 +262,7 @@ section a{
     height: 100vh;
     position: relative;
 }
+/* Name of the project*/
 h4{
     font-size: clamp(0.9em, 1vw, 1.2em);
     position: sticky;
@@ -247,6 +270,7 @@ h4{
     margin-left: 2%;
     max-width: 30%;
 }
+/* Labels to name the skills I used in that project */
 .etiquetas{
     position: sticky;
     top: 46vh;
@@ -263,6 +287,7 @@ h4{
     border-radius: 15px;
     padding: 0.1rem 0.5rem;
 }
+/* Year of project completation */
 .anyo{
     position: sticky;
     top: 46vh;
@@ -270,7 +295,7 @@ h4{
     font-size: clamp(0.7em, 1vw, 0.8em);
 }
 
-/*Gallery of portfolio projects when :hover */
+/*Gallery of portfolio projects when :hover shows a blurred image with some screenshots of the project layout */
 .contenedor:hover{
     background-color: var(--textColor);
     border: none;
@@ -325,17 +350,22 @@ h4{
     display: none;
 }
 /* End of Gallery of Portfolio Projects */
+/* End of 2. HOMEPAGE */
 
-/* PORTFOLIO PROJECTS PAGES
-DESCRIPTION:
+/* 3. PORTFOLIO PROJECTS PAGES
+DESCRIPTION: Every project in the portfolio has its own page showing pictures or videos of the final product. Sometimes it may inlude as well texts or an interactive index.
 GENERAL STRUCTURE:
-
+    - Header
+    - Project Content:
+        - Aside: left side fixed on the screen with the main data -> project name, skills applied and year
+        - Main: right part, which occupies most of the screen. It shows all the media, prototypes or explanations related to the project in horizontal scroll. All content in here is inside layout resources I created called 'ventana', which will be further explained next.
 */
-.contenido{ /* Al ser una section ya viene con las propiedades de width 100% display flex, align-items center, justifiy content center */
+.contenido{ /* Since this is a section, it is already in flex display and everything aligned and justified in the center. */
     height: 82vh;
     margin-top: 18vh;
     flex-direction: row;
 }
+/* aside */
 aside{
     width: clamp(120px, 25vw, 200px);
     height: 100vh;
@@ -379,6 +409,9 @@ aside img{
     font-size:clamp(0.6em, 1vw, 0.7em); 
     font-weight:300;
 }
+/* End of aside */
+
+/* Main */
 main{
     width: 300%;
     height: 82vh;
@@ -390,30 +423,13 @@ main{
     left: 30vw;
 }
 
-/* Project [001]: JC Portfolio */
-.indiceJC{
-    display: grid;
-    grid-template-rows: auto auto repeat(3, 15vh);
-    font-weight: 600;
-    gap: 0.3rem;
-    max-height: 75vh;
-    /*white-space: nowrap; /* Como el p primero es más ancho, por defecto se corta y genera un eje nuevo, no queremos eso*/
-}
-.indiceJC p{
-    font-size: clamp(0.8em, 2.5vw, 1em);
-    text-align: center;
-}
-.indiceJC img{
-    height: 15vh;
-}
-.indiceJC img:hover{
-    border: 0.1rem solid var(--textColor);
-    box-shadow: 0.3rem 0.3rem 0.5rem var(--textColor);
-}
-.portada{
-    width: 50vw;
-    max-height: 70vh;
-}
+/*
+Ventana description: Main is divided into "ventana" sub-sections, which are a resource to normalize the layout of all images and make a coherent design. They are all placed horizontally and compossed by:
+    - Ventana-top: title of the media and a small decoration image on the top corner
+    - Ventana-middle: media content 
+    - Ventana-bottom: small decoration images at the bottom corners and at the center
+Some pages also contains 'ventana-texto', which is another kind of ventana that instead of showing media content in the middle, contains some text and do not contain decoration pictures in the corners and bottom.
+*/
 .ventana{
     display: grid;
     grid-template-rows: repeat(3, auto);
@@ -459,19 +475,53 @@ main{
     align-items: center;
     justify-content: center;
 }
+/* End of Main */
 
-/*BBDD */
+/* Note that as mentioned before, different content type was chosen for each project. The idea is to follow the same design style but give it a twist for each project, some might include special mentions or interactive and other might include other resources. 
+These different resources are explained next */
+
+/* Project [001]: JC Portfolio */
+/* Interactive Index*/
+.indiceJC{
+    display: grid;
+    grid-template-rows: auto auto repeat(3, 15vh);
+    font-weight: 600;
+    gap: 0.3rem;
+    max-height: 75vh;
+}
+.indiceJC p{
+    font-size: clamp(0.8em, 2.5vw, 1em);
+    text-align: center;
+}
+.indiceJC img{
+    height: 15vh;
+}
+.indiceJC img:hover{
+    border: 0.1rem solid var(--textColor);
+    box-shadow: 0.3rem 0.3rem 0.5rem var(--textColor);
+}
+/* This project page contains a video in the very beggining as the 'front' of the project, so the dimensions are styled bigger than other media pieces on this web: */
+.portada{
+    width: 50vw;
+    max-height: 70vh;
+}
+/* End of Project [001]: JC Portfolio */
+
+/* Project [002]: BBDD in cooperation with the United Nations */
+/* This project shows more than one picture where usually other projects only show one, so it needs a different style */
 .varias-img{
     display: flex; 
     align-items: center; 
     gap:0.1rem;
 }
+/* Depending on the original image size, it will need some more specific properties */
 .varias-img .small{
     width: clamp(40px, 10vw, 10vw);
 }
 .varias-img .large{
     height: clamp(200px, 50vh, 65vh)
 }
+/* This project has a special ventana with 4 images, so they need to be fitted in a grid*/
 .grid-img{
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -483,6 +533,7 @@ main{
     max-height: 20vh;
     max-width: 250px;
 }
+/* This project contains as well a unique section for mentioning the stakeholders involved and a picture of their logos*/
 .menciones{
     max-height: 75vh;
     display: flex;
@@ -491,6 +542,7 @@ main{
     align-items: center;
     gap: 0.3rem;
 }
+/* The text in this subsection was so long that it was splited in two paragraphs and added inside a div, so that it can adapt to resposive sizes */
 .menciones div{
     display: flex;
     align-items: flex-start;
@@ -505,9 +557,9 @@ main{
 .menciones img{
     width: clamp(200px, 40vw, 40vw);
 }
+/* End of project [002]: BBDD in cooperation with the United Nations */
 
-
-/* Project [003]: Art&App.com */
+/* Project [003]: Art&Connect.app */
 mark{
     background-color: var(--textColor);
     color: var(--backgroundColor);
@@ -535,6 +587,7 @@ mark{
     font-size: 1.5em;
     font-family: monospace;
 }
+/* Interactive index of the project */
 .painpoints{
     display: grid;
     grid-template: repeat(4, auto) / repeat(2, auto);
@@ -555,13 +608,17 @@ mark{
     font-size: clamp(0.5em, 1.5vw, 0.7em);
     padding: 0.5rem;
 }
+/* End of Project [003]: Art&Connect.app*/
 
-/*[004] Burst Project*/
+/*Project [004]: Burst Project*/
+/*Index of the project*/
+/* Little indication text accompanying the index title*/
 .ventana-top p:nth-child(2){
     flex: auto;
     margin-left: 0.3rem;
     align-self: flex-end;
 }
+/* Interactive images of the index for navigating through the project*/
 .indiceBP{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -581,12 +638,14 @@ mark{
     border: 2px solid var(--textColor);
     box-shadow: 2px 2px 5px var(--textColor);
 }
+/* There is a conflictive image that needs special sizes properties*/
 .ventana img.medium{
     max-width: 20vw;
     max-height: 60vh;
 }
+/* End of Project [004]: Burst Project */
 
-/*Botón next */
+/* Next Project Button. It is included at the end of all project pages to guide the user to the next project*/
 .next{
     width: 150px;
     height: 150px;
@@ -603,14 +662,15 @@ mark{
     color: var(--textColor);
     box-shadow: 2px 2px 5px var(--textColor);
 }
+/* End of Next Project Button*/
+/* End of 3. PROJECT PAGES */
 
-/* Resume Page */
-.cv{
-    /* height: 100vh; */
+/* 4. RESUME PAGE */
+.cv{ /* Since this is a section, everything is already aligned a justified in the center and the items will be displayed in flex-column orientation */
     box-sizing: border-box;
     padding: 0 2vw;
 }
-.horizontal{
+.horizontal{ /* This is a resource that we will use later as well on other .html page. It serves to create a container where elements are placed horizontally and aligned as well as justified in the center.*/
     width: 100%;
     display: flex;
     align-items: center;
@@ -792,8 +852,9 @@ p.subsection{
     gap:1% 2%;
     padding: 3%;
 }
+/* End of 4. RESUME PAGE */
 
-/* Playground Page */
+/* 5. PLAYGROUND PAGE */
 .playground{ 
     width: 85%;
     position: absolute;
@@ -809,6 +870,7 @@ p.subsection{
 .playground .ventana-top p {
     font-size: clamp(0.6em, 1vw, 1em);
 }
+/* Text explanation of the art piece */
 .exp{
     position: relative;
     top: 60%;
@@ -943,9 +1005,6 @@ p.subsection{
 .rotar{
     z-index: 3;
 }
-.rotar img{
-    mix-blend-mode: difference;
-}
 .medio{
     z-index: 4;
 }
@@ -983,17 +1042,6 @@ p.subsection{
     to{
         translate: 0 0px;
         opacity: 1;
-    }
-}
-
-@keyframes rotar {
-    from{
-        transform: rotateX(0deg);
-        transform: rotateY(0deg);
-    }
-    to{
-        transform: rotateX(90deg);
-        transform: rotateY(-10deg);
     }
 }
 
