@@ -536,10 +536,8 @@ mark{
     font-family: monospace;
 }
 .painpoints{
-    width: 30vw;
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(4, auto);
+    grid-template: repeat(4, auto) / repeat(2, auto);
     gap: clamp(1px, 2.5vw, 3px);
     align-items: center;
     box-sizing: border-box;
@@ -556,12 +554,6 @@ mark{
 .painpoints p{
     font-size: clamp(0.5em, 1.5vw, 0.7em);
     padding: 0.5rem;
-}
-.painpoints p:nth-child(2),
-.painpoints p:nth-child(4),
-.painpoints p:nth-child(6),
-.painpoints p:nth-child(8){
-    width: 40vw
 }
 
 /*[004] Burst Project*/
@@ -692,16 +684,14 @@ mark{
     align-content: flex-start;
     align-self: flex-start;
 }
-a.subsection{
+p.subsection{
+    display: inline;
     width: auto;
     font-size: clamp(1em, 1vw, 1.2em);
     font-weight: 600;
     color: var(--textColor);
     background-color: var(--backgroundColor);
     padding-top: 1rem;
-}
-.subsection p{
-    display: inline;
 }
 .experience{
     display: grid;
@@ -942,8 +932,9 @@ a.subsection{
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    color: var(--backgroundColor);
+    background: rgba(132, 132, 132, 0.8);
+    color: var(--textColor);
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
@@ -951,6 +942,9 @@ a.subsection{
 }
 .rotar{
     z-index: 3;
+}
+.rotar img{
+    mix-blend-mode: difference;
 }
 .medio{
     z-index: 4;
@@ -1082,6 +1076,9 @@ a.subsection{
         display: none;
     }
 }
+
+
+
 @media screen and (max-width: 500px) {
 
     main{
@@ -1120,76 +1117,3 @@ a.subsection{
         position: static;
     }
 }
-
-  
-    
-
-    /*nav{
-        position: fixed;
-        top: -50vh;
-        transition:top 0.8s;
-        background-color: var(--textColor);
-        padding: 0.3rem;
-        width:auto;
-        height:auto;
-    }
-    .desplegado{ /* esta clase se la pondremos al nav*/
-       /* top: calc(7.5vh + 30px);
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-evenly;
-    }
-    li a{
-        background-color: var(--textColor);
-        color: var(--backgroundColor);
-        border: 1px solid var(--backgroundColor);
-    }
-    li a:hover{
-        background-color: var(--detailsColor);
-        color: var(--textColor);
-        border: 1px solid var(--textColor);
-    }
-    .menu-movil-abrir{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        background-color: var(--backgroundColor);
-        border:1px solid var(--textColor);
-        border-radius: 50%;
-        box-sizing: border-box;
-        padding: 6px 5px;
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        top: calc(7.5vh - 15px);
-        right: calc(2vw + 15px);
-    }
-    .menu-movil-abrir span{
-        display: block;
-        height: 2px;
-        width: 20px;
-        background-color: var(--textColor);
-    }
-    .menu-movil-cerrar{
-        display: block;
-        border: none;
-        background-color: transparent;
-        color: var(--textColor);
-        font-size: 1em;
-        position:absolute;
-        top: calc(7.5vh - 15px);
-        right: calc(2vw + 15px);
-    }
-    header .cta{
-        display: none;
-        /*
-        padding: 5px 10px;
-        font-weight: 500;
-        font-size: 0.6em;
-        align-self: center;
-        position: absolute;
-        top: calc(7.5vh - 15px);
-        right: calc(50% - 30px);*/ 
-/*    }*/
-    
